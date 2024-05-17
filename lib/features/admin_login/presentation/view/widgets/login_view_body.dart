@@ -1,6 +1,5 @@
 
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
-// import 'package:fixer_admin_panel_app/core/routing/routes.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/widgets/login_view_body_buttons.dart';
@@ -10,7 +9,6 @@ import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/wid
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 class LoginViewBody extends StatefulWidget {
@@ -28,7 +26,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.only(left: 30),
+      padding: const EdgeInsets.only(left: 30),
       children: [
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +77,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       verticalSpace(10),
       const ButtonLogin(),
       verticalSpace(10),
-      Container(
+      SizedBox(
         height: 100.h,
         child:Row(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -1,5 +1,4 @@
 
-import 'package:fixer_admin_panel_app/core/routing/app_router.dart';
 import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/admin_login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,9 +18,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // onGenerateRoute:appRouter.generateRoute,
-        initialRoute:AdminLoginView.RouteName ,
+        initialRoute:AdminLoginView.routeName ,
         routes: {
-          AdminLoginView.RouteName:(context) => const AdminLoginView()
+          AdminLoginView.routeName:(context) => const AdminLoginView()
         },
       ),
     );
