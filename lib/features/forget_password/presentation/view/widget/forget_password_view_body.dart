@@ -17,10 +17,9 @@ class ForgetPasswordBody extends StatelessWidget {
       child: ListView(
         children: [
           Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center, 
           children: [
-            verticalSpace(20),
+            verticalSpace(60),
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
@@ -28,7 +27,7 @@ class ForgetPasswordBody extends StatelessWidget {
               child: Container(
                 height: 90.h,
                 width: 22.w,
-                margin: const EdgeInsets.only(left: 490),
+                margin: const EdgeInsets.only(left: 480),
                  decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: ColorManager.primary,
@@ -36,7 +35,7 @@ class ForgetPasswordBody extends StatelessWidget {
                  child: const Icon(Icons.close_rounded,color: Colors.white,size: 25,),
               ),
             ),
-            verticalSpace(80),
+            verticalSpace(25),
             Text("Forgot password",
               style: TextStyles.headings,
             ),

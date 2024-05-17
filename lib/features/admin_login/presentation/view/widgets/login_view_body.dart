@@ -32,7 +32,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        verticalSpace(90),  
+        verticalSpace(60),  
         Container(
           margin: EdgeInsets.only(right: 130.w,bottom: 60),
           child: Text("Welcome\nBack!",
@@ -89,7 +89,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           horizontalSpace(10),
           TextButton(
               onPressed: () {
-                // context.pushNamed(Routes.getStarted);
               },
               child:Text("Sign Up",
           style: TextStyles.darkheadings.copyWith(color: ColorManager.primary)),

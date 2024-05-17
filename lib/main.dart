@@ -1,6 +1,7 @@
 
 import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/admin_login_view.dart';
 import 'package:fixer_admin_panel_app/features/forget_password/presentation/view/forget_password_view.dart';
+import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/reset_password_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +23,9 @@ class MyApp extends StatelessWidget {
         initialRoute:AdminLoginView.routeName ,
         routes: {
           AdminLoginView.routeName:(context) => const AdminLoginView(),
-          ForgetPasswordView.routename:(context) => const ForgetPasswordView()
+          ForgetPasswordView.routename:(context) => const ForgetPasswordView(),
+          ResetPasswordView.routeName:(context) => const ResetPasswordView(),
+
         },
       ),
     );
