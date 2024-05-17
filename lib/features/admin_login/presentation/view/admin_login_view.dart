@@ -3,10 +3,15 @@ import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/wid
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class AdminLoginView extends StatelessWidget {
+class AdminLoginView extends StatefulWidget {
   static const String routeName="Admin_login_view";
   const AdminLoginView({super.key});
 
+  @override
+  State<AdminLoginView> createState() => _AdminLoginViewState();
+}
+
+class _AdminLoginViewState extends State<AdminLoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class TextStyles {
   static TextStyle normal = TextStyle(
     color: ColorManager.black,
-    fontSize: 14.sp,
+    fontSize: 10.sp,
     fontFamily: GoogleFonts.roboto().fontFamily,
     fontWeight: FontWeight.w500,
   );
@@ -32,7 +32,7 @@ class TextStyles {
   );
 static TextStyle lightheadings = TextStyle(
     color: ColorManager.darkgrey,
-    fontSize: 6.sp,
+    fontSize: 8.sp,
     fontFamily: GoogleFonts.inter().fontFamily,
     fontWeight: FontWeight.w600,
   );

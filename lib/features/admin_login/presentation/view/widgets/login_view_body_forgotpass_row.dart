@@ -3,6 +3,7 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
+import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/widgets/forgot_password_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height:100.h,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +43,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           horizontalSpace(70),
           TextButton(
               onPressed: () {
-                // Navigator.of(context).pushNamed(Routes.forgetPassword);
+               showDialog(context: context, 
+               builder:(context)=>const ForgotPasswordDialog(),
+
+               );
               },
               child: Text("Forgot password?", style: TextStyles.darkheadings))
         ]));
   }
 }
+
