@@ -15,9 +15,8 @@ class AdminLoginView extends StatelessWidget {
           SvgPicture.asset("assets/docs/fixr_wave_background.svg",
                         height:MediaQuery.of(context).size.height,
                         width: MediaQuery.of(context).size.width*0.5,),
-        Container(height: MediaQuery.of(context).size.height,
+        SizedBox(height: MediaQuery.of(context).size.height,
         width:MediaQuery.of(context).size.width*0.5,
-        color: const Color.fromARGB(255, 183, 214, 229),
         child: const LoginViewBody(),
         )
         ],
