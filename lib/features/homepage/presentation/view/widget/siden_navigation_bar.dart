@@ -1,8 +1,7 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
-import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/profile.dart';
-import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/sidebuttons.dart';
+import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/profile_container.dart';
+import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

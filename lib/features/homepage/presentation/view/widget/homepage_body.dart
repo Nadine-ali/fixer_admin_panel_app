@@ -1,11 +1,7 @@
-import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/sideNavigationBar.dart';
+import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/siden_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomepageBody extends StatefulWidget {
   const HomepageBody

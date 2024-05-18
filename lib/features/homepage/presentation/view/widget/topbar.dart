@@ -1,16 +1,13 @@
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TopBar extends StatelessWidget {
   TopBar({super.key});
   final TextEditingController controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height:115 ,
       width: MediaQuery.sizeOf(context).width,
       // color: Color.fromARGB(255, 158, 65, 65),
