@@ -37,10 +37,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 activeColor: ColorManager.white,
                 focusColor: ColorManager.black,
               ),
-              horizontalSpace(10),
+              horizontalSpace(0),
             Text("Remember me", style: TextStyles.darkheadings),],
           ),
-          horizontalSpace(70),
+          horizontalSpace(50),
           TextButton(
               onPressed: () {
                showDialog(context: context, 

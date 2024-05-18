@@ -21,8 +21,8 @@ class TextForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height:120.h,
-        width: 240.w,
+        width: 200.w,
+        height:100.h,
         padding: EdgeInsets.only(top: 5.h,left: 15.w),
         decoration: BoxDecoration(
             color: ColorManager.white,
@@ -37,7 +37,7 @@ class TextForm extends StatelessWidget {
             hintText: text,
             hintStyle: TextStyles.lightheadings,
             enabledBorder: UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(6.sp),
               borderSide: const BorderSide(color: Colors.transparent),
             ),
             focusedBorder: const UnderlineInputBorder(

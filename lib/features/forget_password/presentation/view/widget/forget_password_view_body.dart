@@ -19,14 +19,14 @@ class ForgetPasswordBody extends StatelessWidget {
           Column(
           mainAxisAlignment: MainAxisAlignment.center, 
           children: [
-            verticalSpace(60),
+            verticalSpace(40),
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
               },
               child: Container(
-                height: 90.h,
-                width: 22.w,
+                height: 60.h,
+                width: 15.w,
                 margin: const EdgeInsets.only(left: 480),
                  decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
@@ -35,24 +35,25 @@ class ForgetPasswordBody extends StatelessWidget {
                  child: const Icon(Icons.close_rounded,color: Colors.white,size: 25,),
               ),
             ),
-            verticalSpace(25),
+            verticalSpace(70),
             Text("Forgot password",
               style: TextStyles.headings,
             ),
-            verticalSpace(100),
+            verticalSpace(40),
             Text("We’ll send a verification code to this\nnumber if it matches an existing account",
-              style: TextStyles.lightheadings,
+              style: TextStyles.darkheadings,
               textAlign: TextAlign.center,
             ),
             verticalSpace(60),
             Padding(
-                padding:EdgeInsets.only(right:140.w),
+                padding:EdgeInsets.only(right:130.w,bottom: 10),
                 child: Text("Phone number",
                   style: TextStyles.normal,
                 )),
+
             Container(
-              // height:170.h,
-              width: 210.w,
+              height:100.h,
+              width: 190.w,
               alignment: Alignment.center,
                 child: TextFormField(
                     controller: phonenumber,
@@ -67,11 +68,11 @@ class ForgetPasswordBody extends StatelessWidget {
                         alignLabelWithHint: true,
                         contentPadding: const EdgeInsets.all(10),
                         focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.sp),
+                            borderRadius: BorderRadius.circular(6.sp),
                             borderSide: const BorderSide(
                                 width: 1, color: ColorManager.black)),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.sp),
+                            borderRadius: BorderRadius.circular(6.sp),
                             borderSide: const BorderSide(
                                 width: 1, color: ColorManager.black))))),
             verticalSpace(55),

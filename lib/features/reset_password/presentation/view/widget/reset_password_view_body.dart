@@ -3,6 +3,7 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/widget/reset_button.dart';
 import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/widget/reset_password_textfield.dart';
+import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/widget/reset_text_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/themes/text_styles.dart';
@@ -26,7 +27,7 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
       // crossAxisAlignment: CrossAxisAlignment.start, 
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        verticalSpace(60),
+        verticalSpace(40),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,44 +36,39 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
                 Navigator.of(context).pop();
               },
               child: Container(
-                height: 90.h,
-                    width: 22.w,
+                height: 60.h,
+                    width: 15.w,
                     margin: const EdgeInsets.only(left: 20),
                      decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: ColorManager.white,
                      ),
-                child: Icon(Icons.arrow_back_ios_new_rounded,size:25 ,color:Colors.black,))
+                child: const Icon(Icons.arrow_back_ios_new_rounded,size:25 ,color:Colors.black,))
               ),
                 InkWell(
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Container(
-                    height: 90.h,
-                    width: 22.w,
-                    margin: const EdgeInsets.only(right: 20),
-                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: ColorManager.primary,
-                     ),
-                     child: const Icon(Icons.close_rounded,color: Colors.white,size: 25,),
-                  ),
-                ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Container(
+                height: 60.h,
+                width: 15.w,
+                margin: const EdgeInsets.only(right: 26),
+                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: ColorManager.primary,
+                 ),
+                 child: const Icon(Icons.close_rounded,color: Colors.white,size: 25,),
+              ),
+            ),
               ],
             ),
-        verticalSpace(25),
+        verticalSpace(70),
         Text(
           "Reset password",
           style: TextStyles.headings,
         ),
         verticalSpace(40),
-        Padding(
-            padding:EdgeInsets.only(right: 140.w),
-            child: Text(
-              "New password",
-              style: TextStyles.normal,
-            )),
+        const ResetTextContainer(text: "New Password"),
         verticalSpace(5),
         ResetPasswordTextField(
           controller: passwordnew,
@@ -89,12 +85,7 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
           ),
         ),
         verticalSpace(25),
-        Padding(
-            padding:EdgeInsets.only(right: 100.w),
-            child: Text(
-              "Confirm new password",
-              style: TextStyles.normal,
-            )),
+        const ResetTextContainer(text: "Confirm New Password"),
         verticalSpace(5),
         ResetPasswordTextField(
             textInputType: TextInputType.text,
@@ -120,10 +111,10 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
     if (obscure) {
       return Icon(
         Icons.visibility,
-        size: 15.sp,
+        size: 10.sp,
       );
     } else {
-      return Icon(Icons.visibility_off, size: 15.sp);
+      return Icon(Icons.visibility_off, size: 10.sp);
     }
   }
 }

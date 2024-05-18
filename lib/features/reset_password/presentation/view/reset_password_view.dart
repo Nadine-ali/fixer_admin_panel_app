@@ -9,11 +9,11 @@ class ResetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1180.h,
+      height: 1000.h,
         width: 268.w,
         decoration: BoxDecoration(
           color:Colors.white,
-          borderRadius: BorderRadius.circular(30)
+          borderRadius: BorderRadius.circular(10)
         ),
       child: const ResetPasswordBody());
   }

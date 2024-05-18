@@ -32,9 +32,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        verticalSpace(60),  
+        verticalSpace(40),  
         Container(
-          margin: EdgeInsets.only(right: 130.w,bottom: 60),
+          margin: EdgeInsets.only(right: 100.w,bottom: 60),
           child: Text("Welcome\nBack!",
               textAlign: TextAlign.justify, 
               style:TextStyles.boldheadings,
@@ -42,20 +42,20 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         ),
         const TextContainer(
           text: "Phone number",
-          marginRight:160,
+          marginRight:200,
         ),
-        verticalSpace(10), //EMAIL INPUT
+        verticalSpace(5), //EMAIL INPUT
         TextForm(
         controller: phoneController,
         text:"Enter your Phone Number",
         obscure: false,
         textInputType: TextInputType.phone),
-        verticalSpace(25),
+        verticalSpace(20),
         const TextContainer(
           text: "Password",
-          marginRight: 160,
+          marginRight: 200,
         ),
-        verticalSpace(10),//PASSWORD INPUT
+        verticalSpace(5),//PASSWORD INPUT
         TextForm(
         controller: passwordController,
         text: "Enter your Password",
@@ -72,11 +72,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
         
       ]),
-      verticalSpace(10),
+      verticalSpace(5),
       const ForgotPassword(),
-      verticalSpace(10),
+      verticalSpace(5),
       const ButtonLogin(),
-      verticalSpace(10),
+      verticalSpace(5),
       SizedBox(
         height: 100.h,
         child:Row(
@@ -86,7 +86,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           Text("Don't have an account?",
           style: TextStyles.darkheadings,
           ),
-          horizontalSpace(10),
+          horizontalSpace(5),
           TextButton(
               onPressed: () {
               },
@@ -103,9 +103,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
   Icon setpasswordIcon() {
     if (obscure) {
-      return  Icon(Icons.visibility,size: 15.sp,);
+      return  Icon(Icons.visibility,size: 10.sp,);
     } else {
-      return  Icon(Icons.visibility_off,size: 15.sp,);
+      return  Icon(Icons.visibility_off,size: 10.sp,);
     }
   }
 }

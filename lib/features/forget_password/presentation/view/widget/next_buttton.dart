@@ -1,7 +1,6 @@
 
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/widgets/reset_password_dialog.dart';
-import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/reset_password_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,7 +27,7 @@ class _NextButttonState extends State<NextButtton> {
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorManager.primary,
-          fixedSize: Size(170.w, 97.h)
+          fixedSize: Size(140.w, 87.h)
         ),
         child: Text("Next",
           style: GoogleFonts.roboto(

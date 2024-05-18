@@ -7,32 +7,32 @@ import 'package:google_fonts/google_fonts.dart';
 class TextStyles {
   static TextStyle normal = TextStyle(
     color: ColorManager.black,
-    fontSize: 10.sp,
-    fontFamily: GoogleFonts.roboto().fontFamily,
-    fontWeight: FontWeight.w500,
+    fontSize: 8.sp,
+    fontFamily: GoogleFonts.inter().fontFamily,
+    fontWeight: FontWeight.w600,
   );
   static TextStyle headings = TextStyle(
     color: ColorManager.black,
-    fontSize: 12.sp,
+    fontSize: 10.sp,
     fontFamily: GoogleFonts.inter().fontFamily,
     // height: 19.h,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
   );
   static TextStyle boldheadings = TextStyle(
     color: ColorManager.black,
-    fontSize: 26.sp,
+    fontSize: 24.sp,
     fontFamily: GoogleFonts.inter().fontFamily,
     fontWeight: FontWeight.w700,
   );
   static TextStyle darkheadings = TextStyle(
     color: ColorManager.black,
-    fontSize: 8.sp,
+    fontSize: 7.sp,
     fontFamily: GoogleFonts.inter().fontFamily,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
   );
 static TextStyle lightheadings = TextStyle(
     color: ColorManager.darkgrey,
-    fontSize: 8.sp,
+    fontSize: 7.sp,
     fontFamily: GoogleFonts.inter().fontFamily,
     fontWeight: FontWeight.w600,
   );

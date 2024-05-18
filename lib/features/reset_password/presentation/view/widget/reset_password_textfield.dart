@@ -21,9 +21,9 @@ class ResetPasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        width: 250.w,
-        height:130.h,
+        height:100.h,
+        width: 190.w,
+        alignment: Alignment.center,
         child: TextFormField(
             controller: controller,
             keyboardType: textInputType,
@@ -37,11 +37,11 @@ class ResetPasswordTextField extends StatelessWidget {
                 contentPadding: const EdgeInsets.all(10),
                 suffixIcon: icon,
                 focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.sp),
+                    borderRadius: BorderRadius.circular(6.sp),
                     borderSide:
                         BorderSide(width: 1.sp, color: ColorManager.black)),
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.sp),
+                    borderRadius: BorderRadius.circular(6.sp),
                     borderSide:
                         BorderSide(width: 1.sp, color: ColorManager.black)))));
   }

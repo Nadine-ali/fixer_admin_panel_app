@@ -22,7 +22,7 @@ class ResetButtton extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorManager.primary,
-          fixedSize: Size(170.w, 97.h)
+          fixedSize: Size(140.w, 87.h)
         ),
         child: Text("Next",
           style: GoogleFonts.roboto(
