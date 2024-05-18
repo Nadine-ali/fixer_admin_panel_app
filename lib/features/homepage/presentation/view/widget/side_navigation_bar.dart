@@ -5,16 +5,16 @@ import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class SidenavBar extends StatefulWidget {
+class SideNavBar extends StatefulWidget {
   final int selectedIndex;
   final Function(int) onTapped;
-  const SidenavBar({super.key,required this.selectedIndex,required this.onTapped});
+  const SideNavBar({super.key,required this.selectedIndex,required this.onTapped});
 
   @override
-  State<SidenavBar> createState() => _SidenavBarState();
+  State<SideNavBar> createState() => _SidenavBarState();
 }
 
-class _SidenavBarState extends State<SidenavBar> {
+class _SidenavBarState extends State<SideNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
