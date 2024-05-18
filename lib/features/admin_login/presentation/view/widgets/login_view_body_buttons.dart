@@ -2,7 +2,7 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/homepage/presentation/view/homepage.dart';
+import 'package:fixer_admin_panel_app/features/homepage/presentation/view/homepageview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +22,7 @@ class ButtonLogin extends StatelessWidget {
           onPressed: () {
             debugPrint("Phone : ${phoneController.text}");
             debugPrint("Password : ${passwordController.text}");
-            Navigator.of(context).pushReplacementNamed(AdminHomePage.routeName);
+            Navigator.of(context).pushReplacementNamed(AdminHomePageView.routeName);
           },
           style: ElevatedButton.styleFrom(
             shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.sp)) ,

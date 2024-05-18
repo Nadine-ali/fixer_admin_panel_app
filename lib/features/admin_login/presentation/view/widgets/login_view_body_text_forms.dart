@@ -21,8 +21,8 @@ class TextForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 200.w,
-        height:100.h,
+        width:400,
+        height:50,
         padding: EdgeInsets.only(top: 5.h,left: 15.w),
         decoration: BoxDecoration(
             color: ColorManager.white,
@@ -33,6 +33,7 @@ class TextForm extends StatelessWidget {
           keyboardType: textInputType,
           obscureText: obscure,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
             suffixIcon: icon,
             hintText: text,
             hintStyle: TextStyles.lightheadings,
@@ -44,6 +45,7 @@ class TextForm extends StatelessWidget {
               borderSide: BorderSide(color: Color.fromARGB(0, 31, 24, 24)),
             ),
           ),
-        ));
+        )
+        );
   }
 }
