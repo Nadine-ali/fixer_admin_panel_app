@@ -8,6 +8,10 @@ class ColorManager {
   static const Color primary600 = Color(0xFF262A4F);
   static const Color black = Color(0xFF0A0B15);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color darkwhite = Color(0xFFEFF0F4);
   static const Color grey = Color(0xFF888787);
   static const Color darkgrey = Color(0xFF5B5B5B);
+  static const Color babyBlue = Color(0xFFC2E2FF);
+  
+
 }

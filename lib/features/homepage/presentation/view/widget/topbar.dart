@@ -1,6 +1,7 @@
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class TopBar extends StatelessWidget {
   TopBar({super.key});
@@ -61,7 +62,7 @@ class TopBar extends StatelessWidget {
               height: 50,
               margin: const EdgeInsets.only(right: 10),
               decoration: BoxDecoration(color: ColorManager.grey,borderRadius: BorderRadius.circular(50)),
-              child: const Icon(Icons.person_rounded,size: 50,color: ColorManager.primary300,)),
+              child: SvgPicture.asset("assets/docs/Avatar.svg",fit: BoxFit.cover,)),
               const Icon(Icons.keyboard_arrow_down_rounded,size: 35,)
             ],
           ),

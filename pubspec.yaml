@@ -39,7 +39,7 @@ dependencies:
   google_fonts: ^6.2.0
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
-  flutter_animated_button: ^2.0.3
+  d_chart: ^2.6.9
 
 dev_dependencies:
   flutter_test:

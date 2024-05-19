@@ -23,7 +23,6 @@ class TextForm extends StatelessWidget {
     return Container(
         width:400,
         height:50,
-        padding: EdgeInsets.only(top: 5.h,left: 15.w),
         decoration: BoxDecoration(
             color: ColorManager.white,
             borderRadius: BorderRadius.circular(8.sp),
@@ -33,7 +32,7 @@ class TextForm extends StatelessWidget {
           keyboardType: textInputType,
           obscureText: obscure,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+            contentPadding: const EdgeInsets.all(16),
             suffixIcon: icon,
             hintText: text,
             hintStyle: TextStyles.lightheadings,

@@ -1,7 +1,7 @@
 
-import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/Dashboard_view.dart';
+import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
-import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/admin_login_view.dart';
+import 'package:fixer_admin_panel_app/features/login_page/presentation/view/admin_login_view.dart';
 import 'package:fixer_admin_panel_app/features/forget_password/presentation/view/forget_password_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/homepage_view.dart';
 import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/reset_password_view.dart';
