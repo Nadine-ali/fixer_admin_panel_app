@@ -1,3 +1,4 @@
+import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/Dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
 import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/admin_login_view.dart';
@@ -7,7 +8,9 @@ import 'package:fixer_admin_panel_app/features/reset_password/presentation/view/
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  setupLocator();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
