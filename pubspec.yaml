@@ -39,17 +39,11 @@ dependencies:
   google_fonts: ^6.2.0
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
-<<<<<<< HEAD
-  d_chart: ^2.6.9
-=======
   flutter_animated_button: ^2.0.3
   dio: ^5.4.3+1
   bloc: ^8.1.4
-<<<<<<< HEAD
   get_it: ^7.7.0
-=======
->>>>>>> bcac925baeaeb74cff0ecbf2877015aef8b2e97d
->>>>>>> 6be2576780f0200143691515ffac39d0938920c2
+  d_chart: ^2.6.9
 
 dev_dependencies:
   flutter_test:

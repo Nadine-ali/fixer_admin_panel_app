@@ -20,14 +20,8 @@ class TextForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-<<<<<<< HEAD:lib/features/login_page/presentation/view/widgets/login_view_body_text_forms.dart
         width:400,
         height:50,
-=======
-        width: 400,
-        height: 50,
-        padding: EdgeInsets.only(top: 5.h, left: 10.w),
->>>>>>> bcac925baeaeb74cff0ecbf2877015aef8b2e97d:lib/features/admin_login/presentation/view/widgets/login_view_body_text_forms.dart
         decoration: BoxDecoration(
             color: ColorManager.white,
             borderRadius: BorderRadius.circular(8.sp),
@@ -37,12 +31,7 @@ class TextForm extends StatelessWidget {
           keyboardType: textInputType,
           obscureText: obscure,
           decoration: InputDecoration(
-<<<<<<< HEAD:lib/features/login_page/presentation/view/widgets/login_view_body_text_forms.dart
             contentPadding: const EdgeInsets.all(16),
-=======
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
->>>>>>> bcac925baeaeb74cff0ecbf2877015aef8b2e97d:lib/features/admin_login/presentation/view/widgets/login_view_body_text_forms.dart
             suffixIcon: icon,
             hintText: text,
             hintStyle: TextStyles.lightheadings,
