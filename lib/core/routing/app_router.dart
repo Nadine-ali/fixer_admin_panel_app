@@ -1,6 +1,6 @@
 
 import 'package:fixer_admin_panel_app/core/routing/routes.dart';
-import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/admin_login_view.dart';
+import 'package:fixer_admin_panel_app/features/login_page/presentation/view/admin_login_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

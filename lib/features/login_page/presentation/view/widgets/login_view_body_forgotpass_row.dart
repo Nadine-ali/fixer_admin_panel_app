@@ -3,7 +3,7 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/widgets/forgot_password_dialog.dart';
+import 'package:fixer_admin_panel_app/features/login_page/presentation/view/widgets/forgot_password_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

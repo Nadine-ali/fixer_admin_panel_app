@@ -1,4 +1,4 @@
-import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/Dashboard_view.dart';
+import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
@@ -15,7 +15,7 @@ class HomepageBody extends StatefulWidget {
 class _HomepageBodyState extends State<HomepageBody> {
   int _selectedIndex=0;
 
-  List<Widget> _views = [
+  final List<Widget> _views = [
     const DashboardView(),
     const AdminView(),
   ];
