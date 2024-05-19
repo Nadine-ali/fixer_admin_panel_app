@@ -1,4 +1,3 @@
-
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/Dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
 import 'package:fixer_admin_panel_app/features/admin_login/presentation/view/admin_login_view.dart';
@@ -19,21 +18,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize:Size(MediaQuery.of(context).size.height,MediaQuery.of(context).size.width),
+      designSize: Size(MediaQuery.of(context).size.height,
+          MediaQuery.of(context).size.width),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // onGenerateRoute:appRouter.generateRoute,
-        initialRoute:AdminLoginView.routeName ,
+        initialRoute: AdminLoginView.routeName,
         routes: {
-          AdminLoginView.routeName:(context) => const AdminLoginView(),
-          ForgetPasswordView.routeName:(context) => const ForgetPasswordView(),
-          ResetPasswordView.routeName:(context) => const ResetPasswordView(),
-          HomePageView.routeName:(context) => const HomePageView(),
-          DashboardView.routeName:(context) => const DashboardView(),
-          AdminView.routeName:(context) => const AdminView(),
-
-
-
+          AdminLoginView.routeName: (context) => const AdminLoginView(),
+          ForgetPasswordView.routeName: (context) => const ForgetPasswordView(),
+          ResetPasswordView.routeName: (context) => const ResetPasswordView(),
+          HomePageView.routeName: (context) => const HomePageView(),
+          DashboardView.routeName: (context) => const DashboardView(),
+          AdminView.routeName: (context) => const AdminView(),
         },
       ),
     );
