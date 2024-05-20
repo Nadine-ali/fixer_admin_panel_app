@@ -46,6 +46,7 @@ dependencies:
   d_chart: ^2.6.9
   dartz: ^0.10.1
   hive_flutter: ^1.1.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

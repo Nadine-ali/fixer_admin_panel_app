@@ -16,11 +16,13 @@ class UserChartModel extends StatelessWidget {
   final List<OrdinalData> chartList;
   final String text;
   final String number;
-  const UserChartModel(
-      {super.key,
-      required this.text,
-      required this.number,
-      required this.chartList});
+
+  const UserChartModel({
+    super.key,
+    required this.text,
+    required this.number,
+    required this.chartList,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +64,12 @@ class UserChartModel extends StatelessWidget {
           ),
           if (size.height > 700 && size.width > 700)
             Container(
-              height: 1,
+              height: 0.5,
               color: ColorManager.grey,
             ),
           if (size.height > 700 && size.width > 700) verticalSpace(60),
           AspectRatio(
-            aspectRatio: size.width > 1050 ? 20 / 6 : 20 / 3,
+            aspectRatio: size.width > 1050 ? 23 / 7 : 20 / 3,
             child: DChartPieO(
               data: chartList,
               customLabel: (ordinalData, index) {

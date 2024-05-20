@@ -21,7 +21,7 @@ class TableContainer extends StatelessWidget {
         builder: (context, state) {
           return SizedBox(
             width: size.width * 0.8,
-            height: DashboardCubit.get(context).messages.length * 80 + 100,
+            height: DashboardCubit.get(context).messages.length * 120 + 400,
             child: size.width < 1050
                 ? Column(
                     children: [

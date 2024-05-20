@@ -1,3 +1,4 @@
+import 'package:fixer_admin_panel_app/features/Dashboard/data/models/charts_model.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/data/models/messege_model.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/data/repos/dashboard_repo_impl.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,22 @@ class DashboardCubit extends Cubit<DashboardState> {
       (r) {
         messages = r;
         emit(DashboardSuccess(r));
+      },
+    );
+  }
+
+  ChartsModel? charts;
+
+  void getChartsData() async {
+    emit(ChartsLoading());
+    final response = await repoImpl.getChartsData();
+    response.fold(
+      (l) {
+        emit(ChartsFailed(l.message));
+      },
+      (r) {
+        charts = r;
+        emit(ChartsSuccess(r));
       },
     );
   }

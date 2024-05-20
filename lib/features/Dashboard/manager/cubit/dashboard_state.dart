@@ -15,3 +15,15 @@ final class DashboardFailed extends DashboardState {
   final String message;
   DashboardFailed(this.message);
 }
+
+final class ChartsLoading extends DashboardState {}
+
+final class ChartsSuccess extends DashboardState {
+  final ChartsModel charts;
+  ChartsSuccess(this.charts);
+}
+
+final class ChartsFailed extends DashboardState {
+  final String message;
+  ChartsFailed(this.message);
+}

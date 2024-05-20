@@ -16,11 +16,12 @@ class CraftsmenChartModel extends StatelessWidget {
   final List<OrdinalData> chartList;
   final String text;
   final String number;
-  const CraftsmenChartModel(
-      {super.key,
-      required this.text,
-      required this.number,
-      required this.chartList});
+  const CraftsmenChartModel({
+    super.key,
+    required this.text,
+    required this.number,
+    required this.chartList,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +63,12 @@ class CraftsmenChartModel extends StatelessWidget {
           ),
           if (size.height > 700 && size.width > 700)
             Container(
-              height: 1,
+              height: 0.5,
               color: ColorManager.grey,
             ),
           if (size.height > 700 && size.width > 700) verticalSpace(60),
           AspectRatio(
-            aspectRatio: size.width > 1050 ? 20 / 6 : 20 / 3,
+            aspectRatio: size.width > 1050 ? 23 / 7 : 20 / 3,
             child: Stack(alignment: Alignment.center, children: [
               if (size.width > 1350)
                 SizedBox(
