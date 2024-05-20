@@ -19,44 +19,44 @@ class TableContainer extends StatelessWidget {
           DashboardCubit(getIt<DashBoardRepoImpl>())..getDashboardData(),
       child: BlocBuilder<DashboardCubit, DashboardState>(
         builder: (context, state) {
-          return SizedBox(
-            width: size.width * 0.8,
-            height: DashboardCubit.get(context).messages.length * 120 + 400,
-            child: size.width < 1050
-                ? Column(
-                    children: [
-                      if (size.width > 700) verticalSpace(20),
-                      if (size.width > 700)
-                        Text("View Tickets",
-                            style: TextStyles.headings.copyWith(
-                                color: ColorManager.primary,
-                                decoration: TextDecoration.underline)),
-                    ],
-                  )
-                : Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: size.width * 0.05),
-                    child: Column(
+            return SizedBox(
+              width: size.width * 0.8,
+              height: DashboardCubit.get(context).messages.length * 120 + 400,
+              child: size.width < 1050
+                  ? Column(
                       children: [
-                        verticalSpace(20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Recent Tickets",
-                                style: TextStyles.normal
-                                    .copyWith(color: ColorManager.primary)),
-                            Text("View All",
-                                style: TextStyles.normal.copyWith(
-                                    color: ColorManager.primary,
-                                    decoration: TextDecoration.underline)),
-                          ],
-                        ),
-                        verticalSpace(50),
-                        const TableModel()
+                        if (size.width > 700) verticalSpace(20),
+                        if (size.width > 700)
+                          Text("View Tickets",
+                              style: TextStyles.headings.copyWith(
+                                  color: ColorManager.primary,
+                                  decoration: TextDecoration.underline)),
                       ],
+                    )
+                  : Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: size.width * 0.05),
+                      child: Column(
+                        children: [
+                          verticalSpace(20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Recent Tickets",
+                                  style: TextStyles.normal
+                                      .copyWith(color: ColorManager.primary)),
+                              Text("View All",
+                                  style: TextStyles.normal.copyWith(
+                                      color: ColorManager.primary,
+                                      decoration: TextDecoration.underline)),
+                            ],
+                          ),
+                          verticalSpace(50),
+                          const TableModel()
+                        ],
+                      ),
                     ),
-                  ),
-          );
+            );
         },
       ),
     );

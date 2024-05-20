@@ -8,13 +8,11 @@ class ProfileBox extends StatelessWidget {
   const ProfileBox({super.key});
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SizedBox(
-      width: 236,
-      height: 100,
-      // color: Colors.amber,
+      width: size.width * 0.2,
+      height: size.height * 0.1,
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
               width: 50,
@@ -29,7 +27,6 @@ class ProfileBox extends StatelessWidget {
               )),
           horizontalSpace(15),
           Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(

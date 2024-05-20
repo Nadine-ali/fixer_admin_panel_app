@@ -1,5 +1,6 @@
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
+import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/craftsmen_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class _HomepageBodyState extends State<HomepageBody> {
   final List<Widget> _views = [
     const DashboardView(),
     const AdminView(),
-    const AdminView(),
+    const CraftsmenView(),
     const AdminView(),
     const AdminView(),
     const AdminView(),

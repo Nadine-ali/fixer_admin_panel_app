@@ -14,14 +14,14 @@ class DashBoardRepoImpl implements DashboardRepository {
   DashBoardRepoImpl({required this.apiServices});
   @override
   Future<Either<Failure, List<MessageModel>>> getDashboardData() async {
-    try {
-      final response = await apiServices.getList(
-          endPoint: ApiConstants.viewMessages, jwt: token);
-      final List<MessageModel> messageList = [];
-      for (var item in response) {
-        messageList.add(MessageModel.fromJson(item));
-      }
-      return Right(messageList);
+      try {
+    final response = await apiServices.getList(
+        endPoint: ApiConstants.viewMessages, jwt: token);
+    final List<MessageModel> messageList = [];
+    for (var item in response) {
+      messageList.add(MessageModel.fromJson(item));
+    }
+    return Right(messageList);
     } catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));

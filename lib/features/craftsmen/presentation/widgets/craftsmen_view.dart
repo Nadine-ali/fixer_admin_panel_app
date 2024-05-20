@@ -1,27 +1,24 @@
+import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
-import 'package:fixer_admin_panel_app/features/Dashboard/manager/cubit/dashboard_cubit.dart';
-import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widget/table_shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TableModel extends StatefulWidget {
-  const TableModel({super.key});
+class CraftsmenView extends StatelessWidget {
+  const CraftsmenView({super.key});
 
-  @override
-  State<TableModel> createState() => _TableModelState();
-}
-
-class _TableModelState extends State<TableModel> {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<DashboardCubit, DashboardState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        DashboardCubit cubit = DashboardCubit.get(context);
-        Size size = MediaQuery.of(context).size;
-        if (state is! DashboardLoading) {
-          return SingleChildScrollView(
-            child: DataTable(
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            verticalSpace(70),
+            //  const TableShimmer(
+            //     count: 18,
+            //   ),
+            DataTable(
+              headingRowHeight: size.height * 0.05,
               columnSpacing: size.width * 0.1,
               dataRowMinHeight: size.height * 0.03,
               headingRowColor: MaterialStateProperty.resolveWith<Color>(
@@ -30,7 +27,12 @@ class _TableModelState extends State<TableModel> {
               }),
               columns: <DataColumn>[
                 const DataColumn(
-                  label: Text('User ID',
+                  label: Text('Name',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(color: ColorManager.white)),
+                ),
+                const DataColumn(
+                  label: Text('User Name',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(color: ColorManager.white)),
                 ),
@@ -39,20 +41,15 @@ class _TableModelState extends State<TableModel> {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(color: ColorManager.white)),
                 ),
-                const DataColumn(
-                  label: Text('Sender Type',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: ColorManager.white)),
-                ),
                 if (size.width > 1200)
                   const DataColumn(
-                    label: Text('Message',
+                    label: Text('Phone Number',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(color: ColorManager.white)),
                   ),
               ],
               rows: List<DataRow>.generate(
-                cubit.messages.length,
+                20,
                 (int index) => DataRow(
                   color: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
@@ -65,31 +62,29 @@ class _TableModelState extends State<TableModel> {
                   }),
                   cells: <DataCell>[
                     DataCell(Text(
-                      cubit.messages[index].userId.toString(),
+                      "vebeeb ",
                       overflow: TextOverflow.ellipsis,
                     )),
                     DataCell(Text(
-                      cubit.messages[index].contactEmail!,
+                      "svsbabed",
                       overflow: TextOverflow.ellipsis,
                     )),
                     DataCell(Text(
-                      cubit.messages[index].userType!,
+                      "basenbksbnrljk",
                       overflow: TextOverflow.ellipsis,
                     )),
                     if (size.width > 1200)
                       DataCell(Text(
-                        cubit.messages[index].messageDetail!,
+                        "sbnkwebnwlbnekl",
                         overflow: TextOverflow.ellipsis,
                       )),
                   ],
                 ),
               ),
             ),
-          );
-        } else {
-          return const TableShimmer(count: 7,);
-        }
-      },
+          ],
+        ),
+      ),
     );
   }
 }

@@ -11,8 +11,8 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SizedBox(
-      height: size.height * 0.1,
-      width: MediaQuery.sizeOf(context).width,
+      height: size.height * 0.12,
+      width: double.infinity,
       child: Row(
         mainAxisAlignment: size.width > 1050
             ? MainAxisAlignment.spaceBetween
