@@ -1,5 +1,5 @@
 
-import 'package:fixer_admin_panel_app/features/login_page/presentation/view/widgets/login_view_body.dart';
+import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
