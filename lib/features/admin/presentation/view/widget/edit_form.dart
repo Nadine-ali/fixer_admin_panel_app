@@ -83,7 +83,7 @@ class _EditInfoFormState extends State<EditInfoForm> {
                       children: <Widget>[
                         CancelButton( onCancel: widget.onCancel),
                         const SizedBox(width: 16.0),
-                        const AddButton(),
+                        const AddButton(text: "Edit",),
                       ],
                     ),
                   ],

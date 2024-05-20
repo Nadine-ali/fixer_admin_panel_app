@@ -16,15 +16,16 @@ class CancelButton extends StatelessWidget {
 }
 
 class AddButton extends StatelessWidget {
-  const AddButton({super.key});
+  final String text;
+  const AddButton({super.key,required this.text});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(backgroundColor: ColorManager.primary),
-      child: const Text(
-        'Add',
+      child: Text(
+        text,
         style: TextStyle(color: ColorManager.white),
       ),
     );

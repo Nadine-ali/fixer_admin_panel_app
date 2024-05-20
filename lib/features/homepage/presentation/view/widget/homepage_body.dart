@@ -1,3 +1,4 @@
+import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/craftsmen_view.dart';
@@ -69,6 +70,7 @@ class _HomepageBodyState extends State<HomepageBody> {
                   color: const Color.fromARGB(255, 175, 173, 173),
                   height: 1,
                 ),
+                verticalSpace(50),
                 Expanded(
                   child: SingleChildScrollView(
                     child: _views.elementAt(_selectedIndex),

@@ -117,7 +117,7 @@ class _PersonalInfoFormState extends State<PersonalInfoForm> {
                       children: <Widget>[
                         CancelButton(onCancel: widget.onCancel),
                         const SizedBox(width: 16.0),
-                        const AddButton(),
+                        const AddButton(text:"ADD"),
                       ],
                     ),
                   ],

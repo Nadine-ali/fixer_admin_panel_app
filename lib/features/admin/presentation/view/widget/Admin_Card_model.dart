@@ -4,20 +4,12 @@ import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/edit_form.dart';
 import 'package:flutter/material.dart';
 
-class AdminCardModel extends StatefulWidget {
-  const AdminCardModel({super.key});
+class AdminCardModel extends StatelessWidget {
+  final VoidCallback toggleEditForm;
+  const AdminCardModel({super.key,required this.toggleEditForm});
 
-  @override
-  State<AdminCardModel> createState() => _AdminCardModelState();
-}
+  //  bool _showEditForm = false;
 
-class _AdminCardModelState extends State<AdminCardModel> {
-   bool _showEditForm = false;
-  void _toggleEditForm() {
-    setState(() {
-      _showEditForm = !_showEditForm;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,9 +20,7 @@ class _AdminCardModelState extends State<AdminCardModel> {
         borderRadius: BorderRadius.circular(10),
         color: ColorManager.white,
       ),
-      child: _showEditForm
-      ?EditInfoForm(onCancel: _toggleEditForm)
-      :Row(
+      child:Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [ 
@@ -48,7 +38,7 @@ class _AdminCardModelState extends State<AdminCardModel> {
           ),
           horizontalSpace(10),
           InkWell(
-            onTap:_toggleEditForm ,
+            onTap:toggleEditForm ,
             child: const Icon(Icons.edit_outlined,color:ColorManager.black,size: 25,))
         ],
       ),

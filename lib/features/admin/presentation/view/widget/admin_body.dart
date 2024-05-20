@@ -2,6 +2,7 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/Admin_Card_model.dart';
+import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/edit_form.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/personal_info_form.dart';
 import 'package:flutter/material.dart';
 
@@ -14,27 +15,41 @@ class AdminBody extends StatefulWidget {
 
 class _AdminBodyState extends State<AdminBody> {
   bool _showInfoEntryForm = false;
+  bool _showEditEntryForm = false;
 
   void _toggleInfoEntryForm() {
     setState(() {
       _showInfoEntryForm = !_showInfoEntryForm;
+      if (_showInfoEntryForm) _showEditEntryForm = false;
+    });
+  }
+
+  void _toggleEditEntryForm() {
+    setState(() {
+      _showEditEntryForm = !_showEditEntryForm;
+      if (_showEditEntryForm) _showInfoEntryForm = false;
     });
   }
   // onPressed: _toggleInfoEntryForm,
   @override
   Widget build(BuildContext context) {
+    if (_showInfoEntryForm) {
+      return PersonalInfoForm(onCancel: _toggleInfoEntryForm);
+    } else if (_showEditEntryForm) {
+      return EditInfoForm(onCancel: _toggleEditEntryForm);
+    } else {
     return Container(
       width: 1159,
       height: 565,
       color: ColorManager.darkwhite,
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       child: _showInfoEntryForm
           ? PersonalInfoForm(onCancel: _toggleInfoEntryForm,)
           : Center(child:Container(
                 width: 1159,
                 height: 565,
-                color: Colors.blueAccent,
-                padding: const EdgeInsets.all(35),
+                color: ColorManager.darkwhite,
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -44,7 +59,7 @@ class _AdminBodyState extends State<AdminBody> {
                        width: 149,
                        height: 42, 
                        padding: const EdgeInsets.all(5),
-                       margin: const EdgeInsets.only(left:950),
+                       margin: const EdgeInsets.only(left:1000),
                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
                        color: ColorManager.primary,
 
@@ -59,7 +74,7 @@ class _AdminBodyState extends State<AdminBody> {
                       ),
                     ),
                     verticalSpace(50),
-                    const AdminCardModel()
+                    AdminCardModel(toggleEditForm: _toggleEditEntryForm,)
 
                   ],
                 ),
@@ -67,4 +82,5 @@ class _AdminBodyState extends State<AdminBody> {
             ),
     );
   }
+}
 }
