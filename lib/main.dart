@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // onGenerateRoute:appRouter.generateRoute,
-        initialRoute: AdminLoginView.routeName,
+        initialRoute: HomePageView.routeName,
         routes: {
           AdminLoginView.routeName: (context) => const AdminLoginView(),
           ForgetPasswordView.routeName: (context) => const ForgetPasswordView(),
