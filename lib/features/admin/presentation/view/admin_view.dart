@@ -1,4 +1,4 @@
-import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
+import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/admin_body.dart';
 import 'package:flutter/material.dart';
 
 class AdminView extends StatelessWidget {
@@ -7,14 +7,6 @@ class AdminView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 900,
-      height: 500,
-      color: Colors.amber,
-      child: Text(
-        "admin",
-        style: TextStyles.boldheadings,
-      ),
-    );
+    return const AdminBody();
   }
 }
