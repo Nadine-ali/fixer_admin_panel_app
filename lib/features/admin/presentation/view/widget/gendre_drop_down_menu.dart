@@ -14,6 +14,7 @@ class _DropDownMenuState extends State<GenderDropDownMenu> {
   String? _selectedGender;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,8 +23,8 @@ class _DropDownMenuState extends State<GenderDropDownMenu> {
           style: TextStyles.normal.copyWith(fontWeight: FontWeight.w500),
         ),
         Container(
-          width: 555,
-          height: 38,
+          width: size.width * 0.4,
+          height: size.height * 0.045,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),

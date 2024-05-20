@@ -31,7 +31,7 @@ class _CraftsmanDetailsState extends State<CraftsmanDetails> {
     } else {
       // Show a message to select an option
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Please select an approval status'),
         ),
       );
@@ -63,21 +63,6 @@ class _CraftsmanDetailsState extends State<CraftsmanDetails> {
                       vertical: size.height * 0.04),
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Name :",
-                            style:
-                                TextStyles.normal.copyWith(color: Colors.grey),
-                          ),
-                          const Spacer(),
-                          Text(
-                            widget.model.name!,
-                            style: TextStyles.normal,
-                          ),
-                        ],
-                      ),
-                      verticalSpace(size.height * 0.05),
                       Row(
                         children: [
                           Text(

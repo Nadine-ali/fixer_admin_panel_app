@@ -1,4 +1,5 @@
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
+import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 Widget defaultButton({
@@ -25,13 +26,19 @@ Widget defaultButton({
         borderRadius: BorderRadius.circular(radius!),
       ),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: onPressed,
         color: hasEdges ? Colors.white : ColorManager.primary,
         textColor: hasEdges ? ColorManager.primary : Colors.white,
         padding: const EdgeInsets.all(16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Center(child: Text(text)),
+        child: Center(
+            child: Text(
+          text,
+          style: TextStyles.normal.copyWith(
+              color: hasEdges ? ColorManager.primary : Colors.white,
+              fontSize: size.height * 0.015),
+        )),
       ),
     );

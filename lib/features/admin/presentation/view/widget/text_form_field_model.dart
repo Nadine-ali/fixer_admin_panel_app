@@ -15,6 +15,7 @@ class TextFieldModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -23,7 +24,7 @@ class TextFieldModel extends StatelessWidget {
           style: TextStyles.normal.copyWith(fontWeight: FontWeight.w500),
         ),
         Container(
-            height: 38,
+            height: size.height * 0.045,
             width: width,
             margin: const EdgeInsets.all(3),
             decoration: BoxDecoration(
