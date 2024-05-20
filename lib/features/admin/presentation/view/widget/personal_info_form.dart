@@ -6,7 +6,6 @@ import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/te
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 class PersonalInfoForm extends StatefulWidget {
   final VoidCallback onCancel;
   const PersonalInfoForm({super.key, required this.onCancel});
@@ -33,15 +32,17 @@ class _PersonalInfoFormState extends State<PersonalInfoForm> {
           width: 900,
           height: 687,
           decoration: BoxDecoration(
-            boxShadow:[
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5), // shadow color
-                  spreadRadius: 3, // spread radius
-                  blurRadius: 7, // blur radius
-                  offset: const Offset(0, 3), // changes position of shadow
-                ),
-              ],
-            borderRadius: BorderRadius.circular(30),color: ColorManager.white,),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5), // shadow color
+                spreadRadius: 3, // spread radius
+                blurRadius: 7, // blur radius
+                offset: const Offset(0, 3), // changes position of shadow
+              ),
+            ],
+            borderRadius: BorderRadius.circular(30),
+            color: ColorManager.white,
+          ),
           padding: const EdgeInsets.all(30.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,8 +50,15 @@ class _PersonalInfoFormState extends State<PersonalInfoForm> {
               Container(
                 width: 118,
                 height: 118,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(70),color: const Color.fromARGB(255, 129, 127, 127)),
-                child: SvgPicture.asset("assets/docs/defaultProfilePic.svg",fit: BoxFit.cover,height: 118,width: 118,),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(70),
+                    color: const Color.fromARGB(255, 129, 127, 127)),
+                child: SvgPicture.asset(
+                  "assets/docs/defaultProfilePic.svg",
+                  fit: BoxFit.cover,
+                  height: 118,
+                  width: 118,
+                ),
               ),
               horizontalSpace(20),
               Container(
@@ -64,24 +72,50 @@ class _PersonalInfoFormState extends State<PersonalInfoForm> {
                     Row(
                       children: <Widget>[
                         Expanded(
-                          child: TextFieldModel(width: 270,text:"First name",controller: firstNameController,),
+                          child: TextFieldModel(
+                            width: 270,
+                            text: "First name",
+                            controller: firstNameController,
+                          ),
                         ),
                         const SizedBox(width: 16.0),
                         Expanded(
-                          child: TextFieldModel(width: 270,text: "Last name",controller: lastNameController,),
+                          child: TextFieldModel(
+                            width: 270,
+                            text: "Last name",
+                            controller: lastNameController,
+                          ),
                         ),
                       ],
                     ),
-                    TextFieldModel(width: 555,text: "Username",controller: usernameController,),
-                    TextFieldModel(width: 555,text:"Phone",controller: phoneController,),
-                    TextFieldModel(width: 555,text:"email",controller: emailController,),
-                    TextFieldModel(width: 555,text: "role",controller: roleController,),
-                    const GenderDropDownMenu(text:"Gender",),
+                    TextFieldModel(
+                      width: 555,
+                      text: "Username",
+                      controller: usernameController,
+                    ),
+                    TextFieldModel(
+                      width: 555,
+                      text: "Phone",
+                      controller: phoneController,
+                    ),
+                    TextFieldModel(
+                      width: 555,
+                      text: "email",
+                      controller: emailController,
+                    ),
+                    TextFieldModel(
+                      width: 555,
+                      text: "role",
+                      controller: roleController,
+                    ),
+                    const GenderDropDownMenu(
+                      text: "Gender",
+                    ),
                     verticalSpace(90),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        CancelButton( onCancel: widget.onCancel),
+                        CancelButton(onCancel: widget.onCancel),
                         const SizedBox(width: 16.0),
                         const AddButton(),
                       ],
@@ -96,5 +130,3 @@ class _PersonalInfoFormState extends State<PersonalInfoForm> {
     );
   }
 }
-
-

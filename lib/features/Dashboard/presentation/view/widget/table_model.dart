@@ -87,7 +87,9 @@ class _TableModelState extends State<TableModel> {
             ),
           );
         } else {
-          return const TableShimmer(count: 7,);
+          return const TableShimmer(
+            count: 7,
+          );
         }
       },
     );

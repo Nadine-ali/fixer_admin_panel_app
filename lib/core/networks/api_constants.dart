@@ -3,4 +3,5 @@ class ApiConstants {
   static const String login = "login";
   static const String viewMessages = "ViewMessages";
   static const String charts = "Admin/Dashboard";
+  static const getCraftsmen = "Admin/Pending";
 }

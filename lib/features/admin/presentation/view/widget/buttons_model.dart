@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 
 class CancelButton extends StatelessWidget {
   final VoidCallback onCancel;
-  const CancelButton({super.key,required this.onCancel});
+  const CancelButton({super.key, required this.onCancel});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed:onCancel,
-      style: ElevatedButton.styleFrom(
-       backgroundColor: ColorManager.white
-      ),
+      onPressed: onCancel,
+      style: ElevatedButton.styleFrom(backgroundColor: ColorManager.white),
       child: const Text('Cancel'),
     );
   }
@@ -23,13 +21,12 @@ class AddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed:() {
-        
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: ColorManager.primary
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(backgroundColor: ColorManager.primary),
+      child: const Text(
+        'Add',
+        style: TextStyle(color: ColorManager.white),
       ),
-      child: const Text('Add',style: TextStyle(color: ColorManager.white),),
     );
   }
 }

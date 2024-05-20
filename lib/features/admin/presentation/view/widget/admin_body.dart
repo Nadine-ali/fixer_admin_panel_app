@@ -1,10 +1,7 @@
-import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/personal_info_form.dart';
-import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/user_profile.dart';
 import 'package:flutter/material.dart';
 
 class AdminBody extends StatefulWidget {
-  
   const AdminBody({super.key});
 
   @override
@@ -26,9 +23,11 @@ class _AdminBodyState extends State<AdminBody> {
       width: 1159,
       height: 565,
       color: Colors.amber,
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       child: _showInfoEntryForm
-          ? PersonalInfoForm(onCancel: _toggleInfoEntryForm,)
+          ? PersonalInfoForm(
+              onCancel: _toggleInfoEntryForm,
+            )
           : Center(
               child: ElevatedButton(
                 onPressed: _toggleInfoEntryForm,

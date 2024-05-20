@@ -5,5 +5,5 @@ import 'package:fixer_admin_panel_app/features/Dashboard/data/models/messege_mod
 
 abstract class DashboardRepository {
   Future<Either<Failure, List<MessageModel>>> getDashboardData();
-  Future<Either<Failure,ChartsModel>> getChartsData();
+  Future<Either<Failure, ChartsModel>> getChartsData();
 }
