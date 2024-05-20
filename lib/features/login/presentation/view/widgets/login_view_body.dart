@@ -1,17 +1,11 @@
-import 'package:fixer_admin_panel_app/core/helpers/extensions.dart';
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
-import 'package:fixer_admin_panel_app/core/routing/routes.dart';
-import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/login/cubit/login_cubit.dart';
-import 'package:fixer_admin_panel_app/features/login/data/repos/login_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_buttons.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_forgotpass_row.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_text_container.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_text_forms.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginViewBody extends StatefulWidget {
@@ -76,8 +70,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       verticalSpace(5),
       const ForgotPassword(),
       verticalSpace(5),
-    ButtonLogin(emailController: phoneController,
-    passwordController: passwordController,),
+      ButtonLogin(
+        emailController: phoneController,
+        passwordController: passwordController,
+      ),
       verticalSpace(5),
       SizedBox(
           height: 100.h,

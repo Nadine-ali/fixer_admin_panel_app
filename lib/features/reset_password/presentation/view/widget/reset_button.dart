@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,8 +11,7 @@ class ResetButtton extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController passwordnew = TextEditingController();
     final TextEditingController passwordconfirmation = TextEditingController();
-    return 
-     Container(
+    return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.w),
       child: ElevatedButton(
         onPressed: () {
@@ -21,10 +19,10 @@ class ResetButtton extends StatelessWidget {
           debugPrint("Phone : ${passwordconfirmation.text}");
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: ColorManager.primary,
-          fixedSize: Size(140.w, 87.h)
-        ),
-        child: Text("Next",
+            backgroundColor: ColorManager.primary,
+            fixedSize: Size(140.w, 87.h)),
+        child: Text(
+          "Next",
           style: GoogleFonts.roboto(
               color: ColorManager.white,
               fontSize: 8.sp,

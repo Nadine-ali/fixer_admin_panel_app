@@ -20,8 +20,8 @@ class TextForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width:400,
-        height:50,
+        width: 400,
+        height: 50,
         decoration: BoxDecoration(
             color: ColorManager.white,
             borderRadius: BorderRadius.circular(8.sp),

@@ -6,10 +6,6 @@ class ForgotPasswordDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Dialog(
-        child: ForgetPasswordView());
-    
-    
-    }
+    return const Dialog(child: ForgetPasswordView());
+  }
 }
-

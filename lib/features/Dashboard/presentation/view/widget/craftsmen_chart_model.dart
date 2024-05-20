@@ -10,92 +10,121 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
 class CraftsmenChartModel extends StatelessWidget {
   final List<OrdinalData> chartList;
   final String text;
   final String number;
-  const CraftsmenChartModel({super.key,required this.text,required this.number, required this.chartList});
+  const CraftsmenChartModel(
+      {super.key,
+      required this.text,
+      required this.number,
+      required this.chartList});
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      width: 370,
-      height: 290,
+      width: size.width * 0.25,
+      height: size.height * 0.25,
       alignment: Alignment.center,
-      decoration: BoxDecoration(color: ColorManager.white,
-      borderRadius: BorderRadius.circular(15),
+      decoration: BoxDecoration(
+        color: ColorManager.white,
+        borderRadius: BorderRadius.circular(15),
       ),
-      child:Column(
+      child: Column(
         children: [
-          Container(
-            width: 140,
-            height: 50,
+          SizedBox(
+            width: size.width * 0.25,
+            height: size.height * 0.06,
             // color: Colors.amber,
-            margin: const EdgeInsets.only(right: 160),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              Text(text,style: TextStyles.lightheadings.copyWith(fontSize: 16),),
-              Text(number,style: TextStyles.normal.copyWith(color: ColorManager.primary),)
-            ],),
+
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (size.height > 700 && size.width > 700)
+                    Text(
+                      text,
+                      style: TextStyles.lightheadings.copyWith(fontSize: 16),
+                    ),
+                  if (size.height > 700 && size.width > 700)
+                    Text(
+                      number,
+                      style: TextStyles.normal
+                          .copyWith(color: ColorManager.primary),
+                    )
+                ],
+              ),
+            ),
           ),
-          Container(
-            height: 1,
-            color: ColorManager.grey,
-          ),
-          verticalSpace(60),
+          if (size.height > 700 && size.width > 700)
+            Container(
+              height: 1,
+              color: ColorManager.grey,
+            ),
+          if (size.height > 700 && size.width > 700) verticalSpace(60),
           AspectRatio(
-              aspectRatio:21/9,
-              child: Stack(
-                alignment: Alignment.center,
-                children:[ 
-                  SizedBox(
-            width: 50,
-            height: 50,
-            // color: ColorManager.babyBlue,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-              Text("Accepted",style: TextStyles.lightheadings.copyWith(fontSize: 10),),
-              Text("75%",style: TextStyles.normal.copyWith(color: ColorManager.primary),)
-            ],),
-          ),
-                  DChartPieO(
-                    data: chartList,
-                    customLabel: (ordinalData, index) {
-                          return "${ordinalData.domain}:\n ${ordinalData.measure}";
-                        },
-                        configRenderPie: ConfigRenderPie(
-                          arcLabelDecorator: ArcLabelDecorator(
-                            labelPosition: ArcLabelPosition.outside,
-                            outsideLabelStyle: const LabelStyle(
-                color: ColorManager.black,
-                fontSize: 14,
-                            ),
-                            insideLabelStyle: const LabelStyle(
-                color: ColorManager.black,
-                fontSize: 14,
-                            ),
-                            labelPadding: 10,
-                            leaderLineStyle: const ArcLabelLeaderLineStyle(
-                color: ColorManager.black,
-                length: 15,
-                thickness: 0.5,
-                            ),
-                            showLeaderLines: true,
-                          ),
-                          arcLength: 2 * pi,
-                          // arcRatio: 0.25,
-                          arcWidth: 15,
-                          startAngle: -pi / 2,
-                          strokeWidthPx: 2,
-                          arcRatio: 0.25
+            aspectRatio: size.width > 1050 ? 20 / 6 : 20 / 3,
+            child: Stack(alignment: Alignment.center, children: [
+              if (size.width > 1350)
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  // color: ColorManager.babyBlue,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      verticalSpace(20),
+                      Text(
+                        "Accepted",
+                        style: TextStyles.lightheadings.copyWith(fontSize: 10),
+                      ),
+                      Text(
+                        "75%",
+                        style: TextStyles.normal
+                            .copyWith(color: ColorManager.primary),
+                      )
+                    ],
                   ),
                 ),
-        ]),
+              DChartPieO(
+                data: chartList,
+                customLabel: (ordinalData, index) {
+                  return "${ordinalData.domain}:\n ${ordinalData.measure}";
+                },
+                configRenderPie: ConfigRenderPie(
+                    arcLabelDecorator: ArcLabelDecorator(
+                      labelPosition: ArcLabelPosition.outside,
+                      outsideLabelStyle: const LabelStyle(
+                        color: ColorManager.black,
+                        fontSize: 14,
+                      ),
+                      insideLabelStyle: const LabelStyle(
+                        color: ColorManager.black,
+                        fontSize: 14,
+                      ),
+                      labelPadding: 10,
+                      leaderLineStyle: const ArcLabelLeaderLineStyle(
+                        color: ColorManager.black,
+                        length: 15,
+                        thickness: 0.5,
+                      ),
+                      showLeaderLines: true,
+                    ),
+                    arcLength: 2 * pi,
+                    // arcRatio: 0.25,
+                    arcWidth: 15,
+                    startAngle: -pi / 2,
+                    strokeWidthPx: 2,
+                    arcRatio: 0.25),
+              ),
+            ]),
           ),
         ],
-      ), 
+      ),
     );
   }
 }

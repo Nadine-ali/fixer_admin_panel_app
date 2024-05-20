@@ -1,9 +1,7 @@
-
 import 'package:fixer_admin_panel_app/core/routing/routes.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/admin_login_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -12,7 +10,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const AdminLoginView(),
         );
-      
+
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

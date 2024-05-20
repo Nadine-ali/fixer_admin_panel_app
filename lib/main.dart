@@ -1,6 +1,6 @@
 import 'package:fixer_admin_panel_app/core/constants.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
-import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/Dashboard_view.dart';
+import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/admin_login_view.dart';
 import 'package:fixer_admin_panel_app/features/forget_password/presentation/view/forget_password_view.dart';
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
 
-String ? token = "";
+String? token = "";
 void main() async {
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();

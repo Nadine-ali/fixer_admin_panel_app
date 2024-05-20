@@ -1,4 +1,5 @@
 part of 'login_cubit.dart';
+
 sealed class LoginState {}
 
 final class LoginInitial extends LoginState {}
@@ -16,4 +17,3 @@ final class LoginFailed extends LoginState {
 
   LoginFailed(this.message);
 }
-

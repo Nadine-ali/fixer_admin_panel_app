@@ -1,4 +1,3 @@
-
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,12 +29,10 @@ class TextStyles {
     fontFamily: GoogleFonts.inter().fontFamily,
     fontWeight: FontWeight.w600,
   );
-static TextStyle lightheadings = TextStyle(
+  static TextStyle lightheadings = TextStyle(
     color: ColorManager.darkgrey,
     fontSize: 7.sp,
     fontFamily: GoogleFonts.inter().fontFamily,
     fontWeight: FontWeight.w600,
   );
-  
- 
 }

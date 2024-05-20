@@ -8,19 +8,20 @@ class DashBoardBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      width: 1200,
-      height:600,
-      // color: const Color.fromARGB(255, 146, 139, 204),
-      padding: const EdgeInsets.all(10),
-      child:Column(
-        children: [
-          const DonutChartContainer(),
-          verticalSpace(25),
-          const TableContainer(),
-        
-        ],
-      )
-    );
+    Size size = MediaQuery.of(context).size;
+    return Container(
+        width: size.width * 0.8,
+        height: size.height * 0.8,
+        // color: const Color.fromARGB(255, 146, 139, 204),
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const DonutChartContainer(),
+              verticalSpace(25),
+              const TableContainer(),
+            ],
+          ),
+        ));
   }
 }

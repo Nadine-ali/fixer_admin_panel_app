@@ -1,4 +1,3 @@
-
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +20,7 @@ class ResetPasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height:100.h,
+        height: 100.h,
         width: 190.w,
         alignment: Alignment.center,
         child: TextFormField(
