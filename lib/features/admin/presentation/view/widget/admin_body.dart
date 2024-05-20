@@ -3,7 +3,7 @@ import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/admin_card_model.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/edit_form.dart';
-import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/personal_info_form.dart';
+import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/user_profile.dart';
 import 'package:flutter/material.dart';
 
 class AdminBody extends StatefulWidget {
@@ -14,40 +14,54 @@ class AdminBody extends StatefulWidget {
 }
 
 class _AdminBodyState extends State<AdminBody> {
-  bool _showInfoEntryForm = false;
+  // bool _showInfoEntryForm = false;
   bool _showEditEntryForm = false;
+  bool _showUserProfile = false;
 
-  void _toggleInfoEntryForm() {
-    setState(() {
-      _showInfoEntryForm = !_showInfoEntryForm;
-      if (_showInfoEntryForm) _showEditEntryForm = false;
-    });
-  }
+
+  // void _toggleInfoEntryForm() {
+  //   setState(() {
+  //     _showInfoEntryForm = !_showInfoEntryForm;
+  //     if (_showInfoEntryForm) {
+  //      _showEditEntryForm = false;
+  //       _showUserProfile = false;
+  //     }
+  //   });
+  // }
 
   void _toggleEditEntryForm() {
     setState(() {
       _showEditEntryForm = !_showEditEntryForm;
-      if (_showEditEntryForm) _showInfoEntryForm = false;
+      if (_showEditEntryForm) {
+        _showUserProfile = false;
+        }
+    });
+  }
+  void _toggleProfileView() {
+    setState(() {
+      _showUserProfile = !_showUserProfile;
+      if (_showUserProfile) {
+      _showEditEntryForm = false;
+      } 
     });
   }
 
   // onPressed: _toggleInfoEntryForm,
   @override
   Widget build(BuildContext context) {
-    if (_showInfoEntryForm) {
-      return EditInfoForm(onCancel: _toggleInfoEntryForm);
-    } else if (_showEditEntryForm) {
-      return EditInfoForm(onCancel: _toggleEditEntryForm);
-    } else {
-      return Container(
-        width: 1159,
-        height: 565,
-        color: ColorManager.darkwhite,
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        child: _showInfoEntryForm
-            ? EditInfoForm(onCancel: _toggleInfoEntryForm)
-            : Center(
-                child: Container(
+    if (_showEditEntryForm) {
+      return EditInfoForm(onCancel: _toggleEditEntryForm,toggleProfileView: _toggleProfileView,);
+    } else if(_showUserProfile){
+    return UserProfile(onCancel: _toggleProfileView,toggleEditForm: _toggleEditEntryForm,); 
+    } else{
+    return Container(
+      width: 1159,
+      height: 565,
+      color: ColorManager.darkwhite,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      child: _showEditEntryForm
+          ? EditInfoForm(onCancel: _toggleEditEntryForm,toggleProfileView:_toggleProfileView,)
+          : Center(child:Container(
                 width: 1159,
                 height: 565,
                 color: ColorManager.darkwhite,
@@ -56,7 +70,7 @@ class _AdminBodyState extends State<AdminBody> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap: _toggleInfoEntryForm,
+                      onTap: _toggleEditEntryForm,
                       child: Container(
                         width: 149,
                         height: 42,
@@ -84,9 +98,8 @@ class _AdminBodyState extends State<AdminBody> {
                       ),
                     ),
                     verticalSpace(50),
-                    AdminCardModel(
-                      toggleEditForm: _toggleEditEntryForm,
-                    )
+                    AdminCardModel(toggleEditForm: _toggleEditEntryForm,)
+
                   ],
                 ),
               )),

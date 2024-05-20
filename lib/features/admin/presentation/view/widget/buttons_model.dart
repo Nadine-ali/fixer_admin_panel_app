@@ -27,7 +27,7 @@ class AddButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(backgroundColor: ColorManager.primary),
       child: Text(
         text,
-        style: TextStyle(color: ColorManager.white),
+        style: const TextStyle(color: ColorManager.white),
       ),
     );
   }
