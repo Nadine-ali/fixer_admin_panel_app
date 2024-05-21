@@ -7,11 +7,12 @@ class TextFieldModel extends StatelessWidget {
   final double width;
   final String text;
   final TextEditingController controller;
-  const TextFieldModel(
-      {super.key,
-      required this.width,
-      required this.text,
-      required this.controller});
+  const TextFieldModel({
+    super.key,
+    required this.width,
+    required this.text,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,13 @@ class TextFieldModel extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 color: ColorManager.white,
                 border: Border.all(color: ColorManager.grey)),
-            child: TextField(
+            child: TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
               controller: controller,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(

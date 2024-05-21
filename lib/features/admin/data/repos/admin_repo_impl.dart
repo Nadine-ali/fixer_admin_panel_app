@@ -15,7 +15,8 @@ class AdminRepoImpl implements AdminRepo {
   @override
   Future<Either<Failure, List<AdminModel>>> getAdmins() async {
     try {
-      final resonse = await apiServices.getList(endPoint: ApiConstants.getAdmins);
+      final resonse =
+          await apiServices.getList(endPoint: ApiConstants.getAdmins);
       final List<AdminModel> adminList = [];
       for (var item in resonse) {
         adminList.add(AdminModel.fromJson(item));

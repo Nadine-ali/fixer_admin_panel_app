@@ -9,10 +9,10 @@ import 'package:flutter/material.dart';
 class EditInfoForm extends StatefulWidget {
   final VoidCallback onCancel;
   final void Function(AdminModel) toggleProfileView;
-  
+
   const EditInfoForm({
-    super.key, 
-    required this.onCancel, 
+    super.key,
+    required this.onCancel,
     required this.toggleProfileView,
   });
 

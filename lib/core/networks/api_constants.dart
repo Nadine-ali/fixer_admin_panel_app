@@ -5,4 +5,6 @@ class ApiConstants {
   static const String charts = "Admin/Dashboard";
   static const String getCraftsmen = "Admin/Pending";
   static const String getAdmins = "/retrive";
+  static const String getStores = "Stores/data";
+  static const String addStore  = "Admin/Store";
 }
