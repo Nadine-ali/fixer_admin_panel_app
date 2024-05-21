@@ -45,3 +45,17 @@ final class AddStoreFailed extends StoresState {
 
   AddStoreFailed(this.message);
 }
+
+final class AddItemLoading extends StoresState {}
+
+final class AddItemSuccess extends StoresState {
+  final String message;
+
+  AddItemSuccess(this.message);
+}
+
+final class AddItemFailed extends StoresState {
+  final String message;
+
+  AddItemFailed(this.message);
+}

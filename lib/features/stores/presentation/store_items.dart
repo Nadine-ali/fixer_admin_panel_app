@@ -1,4 +1,5 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
+import 'package:fixer_admin_panel_app/core/routing/app_router.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
@@ -7,6 +8,7 @@ import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widge
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/stores/manager/cubit/stores_cubit.dart';
+import 'package:fixer_admin_panel_app/features/stores/presentation/add_item_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -54,7 +56,10 @@ class StoreItems extends StatelessWidget {
                                     children: [
                                       defaultButton(
                                           onPressed: () {
-                                            //cubit.getStoreItems(store.id!);
+                                            navigateTo(
+                                                context,
+                                                AddItem(
+                                                    storeName: store.name!));
                                           },
                                           text: "Add Item",
                                           size: size,
@@ -87,7 +92,10 @@ class StoreItems extends StatelessWidget {
                                     children: [
                                       defaultButton(
                                           onPressed: () {
-                                            //cubit.getStoreItems(store.id!);
+                                            navigateTo(
+                                                context,
+                                                AddItem(
+                                                    storeName: store.name!));
                                           },
                                           text: "Add Item",
                                           size: size,

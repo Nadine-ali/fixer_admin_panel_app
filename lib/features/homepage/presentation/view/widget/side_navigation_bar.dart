@@ -76,6 +76,13 @@ class _SidenavBarState extends State<SideNavBar> {
             onTapped: widget.onTapped,
             index: 5,
           ),
+          verticalSpace(60),
+          SideButton(
+            text: "Locations",
+            iconName: "assets/docs/locationIcon.svg",
+            onTapped: widget.onTapped,
+            index: 0,
+          ),
           verticalSpace(size.height * 0.3),
           if (size.width > 1300)
             SizedBox(

@@ -53,9 +53,26 @@ class StoresRepoImpl implements StoresRepo {
 
   @override
   Future<Either<Failure, String>> addItem(
-      String name, String price, String quantity, String store) {
-    // TODO: implement addItem
-    throw UnimplementedError();
+      String name, String price, int quantity, String store) async {
+    try {
+      final response = await apiservices.post(
+        endPoint: ApiConstants.addItem,
+        jwt: token!,
+        data: {
+          "name": name,
+          "price": price,
+          "quantity": quantity,
+          "store_name": store,
+        },
+      );
+      return Right(response["message"]);
+    } catch (e) {
+      if (e is DioError) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
   }
 
   @override

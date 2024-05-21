@@ -3,11 +3,11 @@ import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextFieldModel extends StatelessWidget {
+class NumberFieldModel extends StatelessWidget {
   final double width;
   final String text;
   final TextEditingController controller;
-  const TextFieldModel({
+  const NumberFieldModel({
     super.key,
     required this.width,
     required this.text,
@@ -41,7 +41,7 @@ class TextFieldModel extends StatelessWidget {
               },
               
               controller: controller,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.all(16),
                 hintText: text,

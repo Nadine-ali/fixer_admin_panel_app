@@ -55,4 +55,17 @@ class StoresCubit extends Cubit<StoresState> {
       },
     );
   }
+
+  Future<void> addItem(String name, String price, int quantity, String store) async {
+    emit(AddItemLoading());
+    final response = await repo.addItem(name, price, quantity, store);
+    response.fold(
+      (l) {
+        emit(AddItemFailed(l.message));
+      },
+      (r) {
+        emit(AddItemSuccess(r));
+      },
+    );
+  }
 }
