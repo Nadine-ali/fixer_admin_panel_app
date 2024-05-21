@@ -73,15 +73,12 @@ class _AdminBodyState extends State<AdminBody> {
                       borderRadius: BorderRadius.circular(8),
                       color: ColorManager.primary,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          "Add user",
-                          style: TextStyles.normal
-                              .copyWith(color: ColorManager.white),
-                        )
-                      ],
+                    child: Center(
+                      child: Text(
+                        "Add user",
+                        style: TextStyles.normal
+                            .copyWith(color: ColorManager.white),
+                      ),
                     ),
                   ),
                 ),

@@ -8,6 +8,7 @@ import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_vie
 import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/craftsmen_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
+import 'package:fixer_admin_panel_app/features/stores/presentation/store_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,9 +24,7 @@ class _HomepageBodyState extends State<HomepageBody> {
 
   final List<Widget> _views = [
     const DashboardView(),
-    Container(
-      child: Text("stores"),
-    ),
+    const StroeView(),
     const CraftsmenView(),
     Container(
       child: Text("categories"),
