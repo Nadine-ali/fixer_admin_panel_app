@@ -1,14 +1,15 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
+import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/gendre_drop_down_menu.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/text_form_field_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class EditInfoForm extends StatefulWidget {
   final VoidCallback onCancel;
   final VoidCallback toggleProfileView;
-  const EditInfoForm({super.key, required this.onCancel, required this.toggleProfileView});
+  const EditInfoForm(
+      {super.key, required this.onCancel, required this.toggleProfileView});
 
   @override
   State<EditInfoForm> createState() => _EditInfoFormState();
@@ -23,65 +24,114 @@ class _EditInfoFormState extends State<EditInfoForm> {
   final TextEditingController roleController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 900,
-      height: 587,
-      decoration: BoxDecoration(
-        boxShadow:[
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5), // shadow color
-              spreadRadius: 3, // spread radius
-              blurRadius: 7, // blur radius
-              offset: const Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        borderRadius: BorderRadius.circular(15),color: ColorManager.white,),
-      padding: const EdgeInsets.all(30.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 118,
-            height: 118,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(70),color: const Color.fromARGB(255, 129, 127, 127)),
-            child: SvgPicture.asset("assets/docs/defaultProfilePic.svg",fit: BoxFit.cover,height: 118,width: 118,),
-          ),
-          horizontalSpace(20),
-          Container(
-            width: 556,
-            height: 582,
-            padding: const EdgeInsets.all(12),
-            color: ColorManager.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: TextFieldModel(width: 270,text:"First name",controller: firstNameController,),
-                    ),
-                    const SizedBox(width: 16.0),
-                    Expanded(
-                      child: TextFieldModel(width: 270,text: "Last name",controller: lastNameController,),
-                    ),
-                  ],
+    Size size = MediaQuery.of(context).size;
+    return SingleChildScrollView(
+      child: Container(
+        width: size.width * 0.45,
+        height: size.height * 0.75,
+        color: ColorManager.darkwhite,
+        child: Center(
+          child: Container(
+            width: size.width * 0.55,
+            height: size.height * 0.75,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // shadow color
+                  spreadRadius: 3, // spread radius
+                  blurRadius: 7, // blur radius
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
-                TextFieldModel(width: 555,text: "Username",controller: usernameController,),
-                TextFieldModel(width: 555,text:"Phone",controller: phoneController,),
-                TextFieldModel(width: 555,text:"email",controller: emailController,),
-                TextFieldModel(width: 555,text: "role",controller: roleController,),
-                const GenderDropDownMenu(text:"Gender",),
-                verticalSpace(90),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    
-                  ],
+              ],
+              borderRadius: BorderRadius.circular(30),
+              color: ColorManager.white,
+            ),
+            padding: const EdgeInsets.all(30.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: size.width * 0.4,
+                  height: size.height * 0.75,
+                  padding: const EdgeInsets.all(12),
+                  color: ColorManager.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: TextFieldModel(
+                              width: size.width * 0.2,
+                              text: "First name",
+                              controller: firstNameController,
+                            ),
+                          ),
+                          const SizedBox(width: 16.0),
+                          Expanded(
+                            child: TextFieldModel(
+                              width: size.width * 0.2,
+                              text: "Last name",
+                              controller: lastNameController,
+                            ),
+                          ),
+                        ],
+                      ),
+                      TextFieldModel(
+                        width: size.width * 0.4,
+                        text: "Username",
+                        controller: usernameController,
+                      ),
+                      TextFieldModel(
+                        width: size.width * 0.4,
+                        text: "Phone",
+                        controller: phoneController,
+                      ),
+                      TextFieldModel(
+                        width: size.width * 0.4,
+                        text: "email",
+                        controller: emailController,
+                      ),
+                      TextFieldModel(
+                        width: size.width * 0.4,
+                        text: "role",
+                        controller: roleController,
+                      ),
+                      const GenderDropDownMenu(
+                        text: "Gender",
+                      ),
+                      verticalSpace(90),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          defaultButton(
+                              onPressed: () {
+                                widget.onCancel();
+                              },
+                              text: "Cancel",
+                              size: size,
+                              width: size.width * 0.05,
+                              hasEdges: true,
+                              height: size.height * 0.045),
+                          const SizedBox(width: 16.0),
+                          defaultButton(
+                              onPressed: () {
+                                widget.toggleProfileView();
+                              },
+                              text: "Edit",
+                              size: size,
+                              width: size.width * 0.05,
+                              hasEdges: false,
+                              height: size.height * 0.045),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

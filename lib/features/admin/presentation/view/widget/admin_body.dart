@@ -5,6 +5,8 @@ import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/ad
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/edit_form.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/user_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AdminBody extends StatefulWidget {
   const AdminBody({super.key});
@@ -17,7 +19,6 @@ class _AdminBodyState extends State<AdminBody> {
   // bool _showInfoEntryForm = false;
   bool _showEditEntryForm = false;
   bool _showUserProfile = false;
-
 
   // void _toggleInfoEntryForm() {
   //   setState(() {
@@ -34,48 +35,51 @@ class _AdminBodyState extends State<AdminBody> {
       _showEditEntryForm = !_showEditEntryForm;
       if (_showEditEntryForm) {
         _showUserProfile = false;
-        }
+      }
     });
   }
+
   void _toggleProfileView() {
     setState(() {
       _showUserProfile = !_showUserProfile;
       if (_showUserProfile) {
-      _showEditEntryForm = false;
-      } 
+        _showEditEntryForm = false;
+      }
     });
   }
 
-  // onPressed: _toggleInfoEntryForm,
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     if (_showEditEntryForm) {
-      return EditInfoForm(onCancel: _toggleEditEntryForm,toggleProfileView: _toggleProfileView,);
-    } else if(_showUserProfile){
-    return UserProfile(onCancel: _toggleProfileView,toggleEditForm: _toggleEditEntryForm,); 
-    } else{
-    return Container(
-      width: 1159,
-      height: 565,
-      color: ColorManager.darkwhite,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      child: _showEditEntryForm
-          ? EditInfoForm(onCancel: _toggleEditEntryForm,toggleProfileView:_toggleProfileView,)
-          : Center(child:Container(
-                width: 1159,
-                height: 565,
-                color: ColorManager.darkwhite,
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InkWell(
+      return EditInfoForm(
+        onCancel: _toggleEditEntryForm,
+        toggleProfileView: _toggleProfileView,
+      );
+    } else if (_showUserProfile) {
+      return UserProfile(
+        onCancel: _toggleProfileView,
+        toggleEditForm: _toggleEditEntryForm,
+      );
+    } else {
+      return _showEditEntryForm
+          ? EditInfoForm(
+              onCancel: _toggleEditEntryForm,
+              toggleProfileView: _toggleProfileView,
+            )
+          : Center(
+              child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: InkWell(
                       onTap: _toggleEditEntryForm,
                       child: Container(
-                        width: 149,
-                        height: 42,
-                        padding: const EdgeInsets.all(5),
-                        margin: const EdgeInsets.only(left: 1000),
+                        width: 80.w,
+                        height: 100.h,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
                           color: ColorManager.primary,
@@ -97,13 +101,47 @@ class _AdminBodyState extends State<AdminBody> {
                         ),
                       ),
                     ),
-                    verticalSpace(50),
-                    AdminCardModel(toggleEditForm: _toggleEditEntryForm,)
-
-                  ],
-                ),
-              )),
-      );
+                  ),
+                  verticalSpace(50),
+                  SizedBox(
+                    height: size.height * 0.7,
+                    width: double.infinity,
+                    child: GridView.count(
+                      childAspectRatio: 12 / 4,
+                      crossAxisCount: size.width > 1450
+                          ? 4
+                          : size.width > 1300
+                              ? 3
+                              : 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      children: [
+                        AdminCardModel(
+                          toggleEditForm: _toggleEditEntryForm,
+                          toggleProfileView: _toggleProfileView,
+                        ),
+                        AdminCardModel(
+                          toggleEditForm: _toggleEditEntryForm,
+                          toggleProfileView: _toggleProfileView,
+                        ),
+                        AdminCardModel(
+                          toggleEditForm: _toggleEditEntryForm,
+                          toggleProfileView: _toggleProfileView,
+                        ),
+                        AdminCardModel(
+                          toggleEditForm: _toggleEditEntryForm,
+                          toggleProfileView: _toggleProfileView,
+                        ),
+                        AdminCardModel(
+                          toggleEditForm: _toggleEditEntryForm,
+                          toggleProfileView: _toggleProfileView,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ));
     }
   }
 }
