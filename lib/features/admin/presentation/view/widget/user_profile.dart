@@ -1,14 +1,19 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
+import 'package:fixer_admin_panel_app/features/admin/data/models/admin_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UserProfile extends StatelessWidget {
   final VoidCallback onCancel;
   final VoidCallback toggleEditForm;
+  final AdminModel admin;
   const UserProfile(
-      {super.key, required this.onCancel, required this.toggleEditForm});
+      {super.key,
+      required this.onCancel,
+      required this.toggleEditForm,
+      required this.admin});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,6 @@ class UserProfile extends StatelessWidget {
       height: 618,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        // color: const Color.fromARGB(255, 139, 235, 137),
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -46,11 +50,11 @@ class UserProfile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Name',
+                          admin.name!,
                           style: TextStyles.normal,
                         ),
                         Text(
-                          'Role',
+                          admin.role!,
                           style: TextStyles.normal.copyWith(fontSize: 6.sp),
                         ),
                       ],
@@ -67,13 +71,13 @@ class UserProfile extends StatelessWidget {
             // Second container
             Container(
               width: 555,
-              height: 412,
+              height: 300,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(35.0),
                 child: Row(
                   children: [
                     // First column
@@ -82,22 +86,15 @@ class UserProfile extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'First Name',
-                            style: TextStyles.lightheadings,
-                          ),
+                          Text('Name', style: TextStyles.lightheadings),
                           verticalSpace(60),
-                          Text('Last Name', style: TextStyles.lightheadings),
+                          Text('ID', style: TextStyles.lightheadings),
                           verticalSpace(60),
                           Text('Username', style: TextStyles.lightheadings),
-                          verticalSpace(60),
-                          Text('Phone Number', style: TextStyles.lightheadings),
                           verticalSpace(60),
                           Text('Email', style: TextStyles.lightheadings),
                           verticalSpace(60),
                           Text('Role', style: TextStyles.lightheadings),
-                          verticalSpace(60),
-                          Text('Gender', style: TextStyles.lightheadings),
                         ],
                       ),
                     ),
@@ -109,32 +106,24 @@ class UserProfile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            'John',
+                            admin.name!,
                             style: TextStyles.lightheadings
                                 .copyWith(color: ColorManager.black),
                           ),
                           verticalSpace(60),
-                          Text('Doe',
+                          Text(admin.id.toString(),
                               style: TextStyles.lightheadings
                                   .copyWith(color: ColorManager.black)),
                           verticalSpace(60),
-                          Text('johndoe',
+                          Text(admin.username!,
                               style: TextStyles.lightheadings
                                   .copyWith(color: ColorManager.black)),
                           verticalSpace(60),
-                          Text('+1234567890',
+                          Text(admin.email!,
                               style: TextStyles.lightheadings
                                   .copyWith(color: ColorManager.black)),
                           verticalSpace(60),
-                          Text('john.doe@example.com',
-                              style: TextStyles.lightheadings
-                                  .copyWith(color: ColorManager.black)),
-                          verticalSpace(60),
-                          Text('User',
-                              style: TextStyles.lightheadings
-                                  .copyWith(color: ColorManager.black)),
-                          verticalSpace(60),
-                          Text('Male',
+                          Text(admin.role!,
                               style: TextStyles.lightheadings
                                   .copyWith(color: ColorManager.black)),
                         ],

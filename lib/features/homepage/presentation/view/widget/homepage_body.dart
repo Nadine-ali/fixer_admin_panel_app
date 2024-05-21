@@ -1,10 +1,15 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
+import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
+import 'package:fixer_admin_panel_app/features/Dashboard/data/repos/dashboard_repo_impl.dart';
+import 'package:fixer_admin_panel_app/features/Dashboard/manager/cubit/dashboard_cubit.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
+import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widget/table_model.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/craftsmen_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomepageBody extends StatefulWidget {
   const HomepageBody({super.key});
@@ -18,10 +23,18 @@ class _HomepageBodyState extends State<HomepageBody> {
 
   final List<Widget> _views = [
     const DashboardView(),
-    const AdminView(),
+    Container(
+      child: Text("stores"),
+    ),
     const CraftsmenView(),
-    const AdminView(),
-    const AdminView(),
+    Container(
+      child: Text("categories"),
+    ),
+    BlocProvider(
+      create: (context) =>
+          DashboardCubit(getIt<DashBoardRepoImpl>())..getDashboardData(),
+      child: const TableModel(),
+    ),
     const AdminView(),
   ];
 

@@ -25,11 +25,8 @@ class _CraftsmanDetailsState extends State<CraftsmanDetails> {
 
   void _handleSubmit() {
     if (_approvalStatus != null) {
-      // Perform your submit logic here, e.g., update the status in the backend
       print('Approval Status: $_approvalStatus');
-      // You can use a method to send this data to your backend
     } else {
-      // Show a message to select an option
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Please select an approval status'),

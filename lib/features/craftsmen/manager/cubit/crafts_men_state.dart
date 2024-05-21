@@ -4,11 +4,11 @@ sealed class CraftsMenState {}
 
 final class CraftsMenInitial extends CraftsMenState {}
 
-final class CraftsMenLoading extends CraftsMenState {} 
+final class CraftsMenLoading extends CraftsMenState {}
 
 final class CraftsMenSuccess extends CraftsMenState {
   final List<CraftsmanModel> craftsMen;
-  CraftsMenSuccess(this.craftsMen); 
+  CraftsMenSuccess(this.craftsMen);
 }
 
 final class CraftsMenFailed extends CraftsMenState {

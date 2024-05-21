@@ -1,15 +1,20 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
+import 'package:fixer_admin_panel_app/features/admin/data/models/admin_model.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/gendre_drop_down_menu.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/text_form_field_model.dart';
 import 'package:flutter/material.dart';
 
 class EditInfoForm extends StatefulWidget {
   final VoidCallback onCancel;
-  final VoidCallback toggleProfileView;
-  const EditInfoForm(
-      {super.key, required this.onCancel, required this.toggleProfileView});
+  final void Function(AdminModel) toggleProfileView;
+  
+  const EditInfoForm({
+    super.key, 
+    required this.onCancel, 
+    required this.toggleProfileView,
+  });
 
   @override
   State<EditInfoForm> createState() => _EditInfoFormState();
@@ -22,9 +27,11 @@ class _EditInfoFormState extends State<EditInfoForm> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController roleController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return SingleChildScrollView(
       child: Container(
         width: size.width * 0.45,
@@ -105,24 +112,31 @@ class _EditInfoFormState extends State<EditInfoForm> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           defaultButton(
-                              onPressed: () {
-                                widget.onCancel();
-                              },
-                              text: "Cancel",
-                              size: size,
-                              width: size.width * 0.05,
-                              hasEdges: true,
-                              height: size.height * 0.045),
+                            onPressed: widget.onCancel,
+                            text: "Cancel",
+                            size: size,
+                            width: size.width * 0.05,
+                            hasEdges: true,
+                            height: size.height * 0.045,
+                          ),
                           const SizedBox(width: 16.0),
                           defaultButton(
-                              onPressed: () {
-                                widget.toggleProfileView();
-                              },
-                              text: "Edit",
-                              size: size,
-                              width: size.width * 0.05,
-                              hasEdges: false,
-                              height: size.height * 0.045),
+                            onPressed: () {
+                              // Example of creating an AdminModel. This should be adjusted based on your actual model's structure.
+                              AdminModel admin = AdminModel(
+                                name: firstNameController.text,
+                                username: usernameController.text,
+                                email: emailController.text,
+                                role: roleController.text,
+                              );
+                              widget.toggleProfileView(admin);
+                            },
+                            text: "Edit",
+                            size: size,
+                            width: size.width * 0.05,
+                            hasEdges: false,
+                            height: size.height * 0.045,
+                          ),
                         ],
                       ),
                     ],

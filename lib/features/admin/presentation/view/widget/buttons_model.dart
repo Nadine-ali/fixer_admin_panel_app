@@ -18,7 +18,8 @@ class CancelButton extends StatelessWidget {
 class AddButton extends StatelessWidget {
   final String text;
   final VoidCallback toggleProfileView;
-  const AddButton({super.key,required this.text, required this.toggleProfileView});
+  const AddButton(
+      {super.key, required this.text, required this.toggleProfileView});
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,7 @@ class CraftsMenCubit extends Cubit<CraftsMenState> {
 
   static CraftsMenCubit get(context) => BlocProvider.of(context);
 
-List<CraftsmanModel> craftsmanList = [];
+  List<CraftsmanModel> craftsmanList = [];
 
   void getCraftsmen() async {
     emit(CraftsMenLoading());
