@@ -39,7 +39,6 @@ class NumberFieldModel extends StatelessWidget {
                 }
                 return null;
               },
-              
               controller: controller,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(

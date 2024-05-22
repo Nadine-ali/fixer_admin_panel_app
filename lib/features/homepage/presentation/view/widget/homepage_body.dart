@@ -8,8 +8,10 @@ import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_vie
 import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/craftsmen_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
+import 'package:fixer_admin_panel_app/features/locations/presentation/locations_view.dart';
 import 'package:fixer_admin_panel_app/features/stores/presentation/store_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomepageBody extends StatefulWidget {
@@ -26,7 +28,7 @@ class _HomepageBodyState extends State<HomepageBody> {
     const DashboardView(),
     const StroeView(),
     const CraftsmenView(),
-    Container(
+    const SizedBox(
       child: Text("categories"),
     ),
     BlocProvider(
@@ -35,6 +37,7 @@ class _HomepageBodyState extends State<HomepageBody> {
       child: const TableModel(),
     ),
     const AdminView(),
+    const SelectLocations(),
   ];
 
   void _onTapped(int index) {

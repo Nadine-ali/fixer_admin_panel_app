@@ -43,7 +43,8 @@ class StoresCubit extends Cubit<StoresState> {
     );
   }
 
-  Future<void> addStore(String name, String location, String description) async {
+  Future<void> addStore(
+      String name, String location, String description) async {
     emit(AddStoreLoading());
     final response = await repo.addStore(name, location, description);
     response.fold(
@@ -56,7 +57,8 @@ class StoresCubit extends Cubit<StoresState> {
     );
   }
 
-  Future<void> addItem(String name, String price, int quantity, String store) async {
+  Future<void> addItem(
+      String name, String price, int quantity, String store) async {
     emit(AddItemLoading());
     final response = await repo.addItem(name, price, quantity, store);
     response.fold(

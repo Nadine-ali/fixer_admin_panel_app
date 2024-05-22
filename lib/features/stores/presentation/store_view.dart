@@ -41,7 +41,6 @@ class _StroeViewState extends State<StroeView> {
                     });
                   },
                   onContinue: () {
-                    
                     setState(() {
                       storePage = "Stores";
                     });

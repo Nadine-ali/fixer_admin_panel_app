@@ -39,7 +39,6 @@ class TextFieldModel extends StatelessWidget {
                 }
                 return null;
               },
-              
               controller: controller,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
