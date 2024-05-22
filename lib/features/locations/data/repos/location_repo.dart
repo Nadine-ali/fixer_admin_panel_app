@@ -4,5 +4,5 @@ import 'package:fixer_admin_panel_app/features/locations/data/models/location_mo
 
 abstract class LocationRepo {
   Future<Either<Failure, List<LocationModel>>> getLocations();
-  Future<Either<Failure, List<String>>> setLocations(List<String> locations);
+  Future<Either<Failure, String>> setLocations(String location);
 }

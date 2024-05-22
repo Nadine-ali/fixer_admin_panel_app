@@ -15,3 +15,15 @@ final class LocationFailed extends LocationState {
   final String message;
   LocationFailed(this.message);
 }
+
+final class LocationSetSuccess extends LocationState {
+  final String locations;
+  LocationSetSuccess(this.locations);
+}
+
+final class LocationSetFailed extends LocationState {
+  final String message;
+  LocationSetFailed(this.message);
+}
+
+final class LocationSetLoading extends LocationState {}

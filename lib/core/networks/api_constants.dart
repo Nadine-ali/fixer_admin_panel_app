@@ -9,4 +9,5 @@ class ApiConstants {
   static const String addStore = "Admin/Store";
   static const String addItem = "Admin/Item";
   static const String operatingLocations = "OperatingLocations";
+  static const String setNewLocation = "Admin/SetNewLocations";
 }

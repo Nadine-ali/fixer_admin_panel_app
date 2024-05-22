@@ -1,8 +1,4 @@
-import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
-import 'package:fixer_admin_panel_app/core/themes/colors.dart';
-import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/stores/manager/cubit/stores_cubit.dart';
 import 'package:fixer_admin_panel_app/features/stores/presentation/add_store.dart';

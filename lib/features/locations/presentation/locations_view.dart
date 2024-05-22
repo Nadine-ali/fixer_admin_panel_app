@@ -38,12 +38,25 @@ class _SelectLocationsState extends State<SelectLocations> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  defaultButton(
-                      onPressed: () {
-                        navigateTo(context, const AddLocation());
-                      },
-                      text: "Add location",
-                      size: size),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      defaultButton(
+                          onPressed: () {
+                            navigateTo(context, const AddLocation());
+                          },
+                          text: "Add location",
+                          size: size),
+                      horizontalSpace(20),
+                      defaultButton(
+                          onPressed: () {
+                            cubit.getLocations();
+                          },
+                          text: "Refresh",
+                          size: size,
+                          hasEdges: true),
+                    ],
+                  ),
                   verticalSpace(20),
                   SizedBox(
                       height: size.height * 0.7,

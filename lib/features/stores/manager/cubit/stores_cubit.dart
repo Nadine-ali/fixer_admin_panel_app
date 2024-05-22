@@ -1,6 +1,5 @@
 import 'package:fixer_admin_panel_app/features/stores/data/models/item_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
-import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

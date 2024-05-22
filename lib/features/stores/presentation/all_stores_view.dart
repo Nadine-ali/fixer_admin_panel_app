@@ -6,7 +6,6 @@ import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widge
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/stores/manager/cubit/stores_cubit.dart';
 import 'package:fixer_admin_panel_app/features/stores/presentation/store_items.dart';
-import 'package:fixer_admin_panel_app/features/stores/presentation/store_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

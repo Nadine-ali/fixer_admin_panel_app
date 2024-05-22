@@ -31,7 +31,7 @@ class LocationCardModel extends StatelessWidget {
                   style:
                       TextStyles.normal.copyWith(fontWeight: FontWeight.w400),
                 ),
-                verticalSpace(10),
+                verticalSpace(20),
                 Text("ID :",
                     style:
                         TextStyles.normal.copyWith(fontWeight: FontWeight.w500))
@@ -43,12 +43,12 @@ class LocationCardModel extends StatelessWidget {
                 Text(
                   location.name!,
                   style:
-                      TextStyles.normal.copyWith(fontWeight: FontWeight.w400),
+                      TextStyles.headings.copyWith(fontWeight: FontWeight.w400),
                 ),
-                verticalSpace(10),
+                verticalSpace(20),
                 Text(location.id.toString(),
-                    style:
-                        TextStyles.normal.copyWith(fontWeight: FontWeight.w500))
+                    style: TextStyles.headings
+                        .copyWith(fontWeight: FontWeight.w500))
               ],
             ),
           ],
