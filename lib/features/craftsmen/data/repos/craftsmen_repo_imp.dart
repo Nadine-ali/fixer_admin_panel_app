@@ -30,4 +30,19 @@ class CraftsmenRepoImpl implements CraftsmanRepository {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, String>> acceptCraftsman(int id) async {
+    try {
+      final response = await apiServices.put(
+        endPoint: "Admin/$id/Verification",
+        data: {},
+      );
+      return Right(response['Message']);
+    } on DioError catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

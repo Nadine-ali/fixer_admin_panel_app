@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, unused_local_variable
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -43,7 +43,7 @@ class LocationRepoImpl extends LocationRepo {
         },
       );
       
-      return Right("");
+      return const Right("");
     } catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));

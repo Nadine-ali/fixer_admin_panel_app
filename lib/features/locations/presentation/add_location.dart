@@ -3,10 +3,8 @@ import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dar
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
-import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/text_form_field_model.dart';
 import 'package:fixer_admin_panel_app/features/locations/data/repos/location_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/locations/manager/cubit/location_cubit.dart';
-import 'package:fixer_admin_panel_app/features/locations/presentation/locations_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -16,3 +16,18 @@ final class CraftsMenFailed extends CraftsMenState {
 
   CraftsMenFailed(this.message);
 }
+
+final class CraftsMenAcceptLoading extends CraftsMenState {}
+
+final class CraftsMenAcceptSuccess extends CraftsMenState {
+  final String message;
+
+  CraftsMenAcceptSuccess(this.message);
+}
+
+final class CraftsMenAcceptFailed extends CraftsMenState {
+  final String message;
+
+  CraftsMenAcceptFailed(this.message);
+}
+

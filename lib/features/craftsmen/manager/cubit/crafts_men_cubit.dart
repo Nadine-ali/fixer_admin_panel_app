@@ -1,5 +1,7 @@
+import 'package:fixer_admin_panel_app/core/networks/api_services/errors/error_snackbar.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/data/models/craftsman_model.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/data/repos/craftsmen_repo_imp.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'crafts_men_state.dart';
 
@@ -21,6 +23,22 @@ class CraftsMenCubit extends Cubit<CraftsMenState> {
       (r) {
         craftsmanList = r;
         emit(CraftsMenSuccess(r));
+      },
+    );
+  }
+
+  void acceptCraftsman(int id, context) async {
+    emit(CraftsMenAcceptLoading());
+    final response = await repo.acceptCraftsman(id);
+    response.fold(
+      (l) {
+        showErrorSnackbar(context, l.message);
+        emit(CraftsMenAcceptFailed(l.message));
+      },
+      (r) {
+        showErrorSnackbar(context, r);
+        Navigator.pop(context);
+        emit(CraftsMenAcceptSuccess(r));
       },
     );
   }
