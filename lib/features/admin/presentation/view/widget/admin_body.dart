@@ -115,7 +115,7 @@ class _AdminBodyState extends State<AdminBody> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.add,size: 40,color: ColorManager.primary,),
+                            const Icon(Icons.add,size: 40,color: ColorManager.primary,),
                             Text(
                               "Add Admin",
                               style: TextStyles.normal

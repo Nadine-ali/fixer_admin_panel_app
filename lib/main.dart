@@ -2,6 +2,7 @@ import 'package:fixer_admin_panel_app/core/constants.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
+import 'package:fixer_admin_panel_app/features/categories/presentation/view/category_view.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/admin_login_view.dart';
 import 'package:fixer_admin_panel_app/features/forget_password/presentation/view/forget_password_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/homepage_view.dart';
@@ -39,6 +40,8 @@ class MyApp extends StatelessWidget {
           HomePageView.routeName: (context) => const HomePageView(),
           DashboardView.routeName: (context) => const DashboardView(),
           AdminView.routeName: (context) => const AdminView(),
+          CategoryView.routeName: (context) => const CategoryView(),
+
         },
       ),
     );

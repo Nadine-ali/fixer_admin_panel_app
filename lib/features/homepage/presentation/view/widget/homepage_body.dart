@@ -5,6 +5,7 @@ import 'package:fixer_admin_panel_app/features/Dashboard/manager/cubit/dashboard
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/dashboard_view.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widget/table_model.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/admin_view.dart';
+import 'package:fixer_admin_panel_app/features/categories/presentation/view/category_view.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/craftsmen_view.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/side_navigation_bar.dart';
 import 'package:fixer_admin_panel_app/features/homepage/presentation/view/widget/topbar.dart';
@@ -27,9 +28,7 @@ class _HomepageBodyState extends State<HomepageBody> {
     const DashboardView(),
     const StroeView(),
     const CraftsmenView(),
-    const SizedBox(
-      child: Text("categories"),
-    ),
+    const CategoryView(),
     BlocProvider(
       create: (context) =>
           DashboardCubit(getIt<DashBoardRepoImpl>())..getDashboardData(),

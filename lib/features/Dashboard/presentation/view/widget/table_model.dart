@@ -3,6 +3,7 @@ import 'package:fixer_admin_panel_app/features/Dashboard/manager/cubit/dashboard
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widget/table_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TableModel extends StatefulWidget {
   const TableModel({super.key});
