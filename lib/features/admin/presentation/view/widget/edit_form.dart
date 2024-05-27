@@ -2,7 +2,7 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
 import 'package:fixer_admin_panel_app/features/admin/data/models/admin_model.dart';
-import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/gendre_drop_down_menu.dart';
+import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/role_drop_down_menu.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/text_form_field_model.dart';
 import 'package:flutter/material.dart';
 
@@ -99,13 +99,8 @@ class _EditInfoFormState extends State<EditInfoForm> {
                         text: "email",
                         controller: emailController,
                       ),
-                      TextFieldModel(
-                        width: size.width * 0.4,
-                        text: "role",
-                        controller: roleController,
-                      ),
                       const GenderDropDownMenu(
-                        text: "Gender",
+                        text: "Role",
                       ),
                       verticalSpace(90),
                       Row(
