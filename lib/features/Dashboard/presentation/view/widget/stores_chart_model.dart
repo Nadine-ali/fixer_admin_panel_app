@@ -32,6 +32,7 @@ class StoreChartModel extends StatelessWidget {
       height: 550.h,
       // width: size.width * 0.25,
       // height: size.height * 0.25,
+      padding: EdgeInsets.symmetric(vertical: 25.h),
       decoration: BoxDecoration(
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(15),

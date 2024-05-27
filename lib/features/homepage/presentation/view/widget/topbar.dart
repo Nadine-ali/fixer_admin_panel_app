@@ -43,7 +43,7 @@ class TopBar extends StatelessWidget {
                     horizontal: 16.0, vertical: 14.0),
                 suffixIcon: Container(
                   height: size.height * 0.06,
-                  width: size.width * 0.06,
+                  width: size.width * 0.03,
                   decoration: const BoxDecoration(
                     color: ColorManager.primary,
                     borderRadius: BorderRadius.only(

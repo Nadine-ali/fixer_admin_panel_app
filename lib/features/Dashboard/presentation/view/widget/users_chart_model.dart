@@ -34,6 +34,7 @@ class UserChartModel extends StatelessWidget {
       // width: size.width * 0.25,
       // height: size.height * 0.25,
       alignment: Alignment.center,
+      padding: EdgeInsets.symmetric(vertical: 25.h),
       decoration: BoxDecoration(
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(15),
@@ -44,7 +45,7 @@ class UserChartModel extends StatelessWidget {
             width: size.width * 0.25,
             height: size.height * 0.06,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

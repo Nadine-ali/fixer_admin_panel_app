@@ -109,7 +109,7 @@ class _AdminBodyState extends State<AdminBody> {
                       decoration: BoxDecoration(
                         border: Border.all(color: ColorManager.primary),
                         borderRadius: BorderRadius.circular(8),
-                        color: ColorManager.white,
+                        color: ColorManager.darkwhite,
                       ),
                       child: Center(
                         child: Column(

@@ -32,6 +32,7 @@ class CraftsmenChartModel extends StatelessWidget {
       height: 550.h,
       // width: size.width * 0.25,
       // height: size.height * 0.25,
+      padding: EdgeInsets.symmetric(vertical: 25.h),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: ColorManager.white,
