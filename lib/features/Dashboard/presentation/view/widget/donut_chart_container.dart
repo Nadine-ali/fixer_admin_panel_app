@@ -25,11 +25,12 @@ class DonutChartContainer extends StatelessWidget {
           DashboardCubit cubit = DashboardCubit.get(context);
           if (cubit.charts != null) {
             return SizedBox(
+              // color: Colors.amber,
                 width: double.infinity,
-                height: size.height * 0.3,
+                height: size.height * 0.35,
                 child: size.width > 700
                     ? Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           UserChartModel(
                             text: "Total users",
@@ -63,7 +64,7 @@ class DonutChartContainer extends StatelessWidget {
                               number: "100",
                               chartList: [
                                 OrdinalData(
-                                    domain: 'New\nStores',
+                                    domain: 'New Stores',
                                     measure: 0,
                                     color: ColorManager.primary),
                                 OrdinalData(
@@ -81,7 +82,7 @@ class DonutChartContainer extends StatelessWidget {
                               number: "170",
                               chartList: [
                                 OrdinalData(
-                                    domain: 'users',
+                                    domain: 'Users',
                                     measure: cubit.charts!.clients!,
                                     color: ColorManager.primary),
                                 OrdinalData(
@@ -110,7 +111,7 @@ class DonutChartContainer extends StatelessWidget {
                                 number: "100",
                                 chartList: [
                                   OrdinalData(
-                                      domain: 'New\nStores',
+                                      domain: 'New Stores',
                                       measure: 1,
                                       color: ColorManager.primary),
                                   OrdinalData(

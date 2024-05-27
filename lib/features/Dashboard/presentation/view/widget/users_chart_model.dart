@@ -11,6 +11,7 @@ import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UserChartModel extends StatelessWidget {
   final List<OrdinalData> chartList;
@@ -28,8 +29,10 @@ class UserChartModel extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.25,
-      height: size.height * 0.25,
+      width: 175.w,
+      height: 550.h,
+      // width: size.width * 0.25,
+      // height: size.height * 0.25,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: ColorManager.white,
@@ -40,10 +43,8 @@ class UserChartModel extends StatelessWidget {
           SizedBox(
             width: size.width * 0.25,
             height: size.height * 0.06,
-            // color: Colors.amber,
-
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,13 +68,13 @@ class UserChartModel extends StatelessWidget {
               height: 0.5,
               color: ColorManager.grey,
             ),
-          if (size.height > 700 && size.width > 700) verticalSpace(60),
+          if (size.height > 700 && size.width > 700) verticalSpace(25),
           AspectRatio(
-            aspectRatio: size.width > 1050 ? 23 / 7 : 20 / 3,
+            aspectRatio: size.width > 1050 ? 33 / 17 : 30 / 13,
             child: DChartPieO(
               data: chartList,
               customLabel: (ordinalData, index) {
-                return "${ordinalData.domain}:\n ${ordinalData.measure}";
+                return "${ordinalData.domain}:\n${ordinalData.measure}";
               },
               configRenderPie: ConfigRenderPie(
                   arcLabelDecorator: ArcLabelDecorator(
@@ -88,8 +89,8 @@ class UserChartModel extends StatelessWidget {
                     ),
                     labelPadding: 10,
                     leaderLineStyle: const ArcLabelLeaderLineStyle(
-                      color: ColorManager.black,
-                      length: 15,
+                      color: ColorManager.grey,
+                      length: 18,
                       thickness: 0.5,
                     ),
                     showLeaderLines: true,

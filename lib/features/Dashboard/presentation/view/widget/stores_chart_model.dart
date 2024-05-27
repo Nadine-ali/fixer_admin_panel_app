@@ -11,6 +11,7 @@ import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StoreChartModel extends StatelessWidget {
   final List<OrdinalData> chartList;
@@ -27,8 +28,10 @@ class StoreChartModel extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.25,
-      height: size.height * 0.25,
+      width: 175.w,
+      height: 550.h,
+      // width: size.width * 0.25,
+      // height: size.height * 0.25,
       decoration: BoxDecoration(
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(15),
@@ -63,13 +66,13 @@ class StoreChartModel extends StatelessWidget {
               height: 0.5,
               color: ColorManager.grey,
             ),
-          if (size.height > 700 && size.width > 700) verticalSpace(60),
+          if (size.height > 700 && size.width > 700) verticalSpace(25),
           AspectRatio(
-            aspectRatio: size.width > 1050 ? 23 / 7 : 20 / 3,
+            aspectRatio: size.width > 1050 ? 33 / 17 : 30 / 13,
             child: DChartPieO(
               data: chartList,
               customLabel: (ordinalData, index) {
-                return "${ordinalData.domain}:\n ${ordinalData.measure}";
+                return "${ordinalData.domain}:\n${ordinalData.measure}";
               },
               configRenderPie: ConfigRenderPie(
                   arcLabelDecorator: ArcLabelDecorator(
@@ -84,8 +87,8 @@ class StoreChartModel extends StatelessWidget {
                     ),
                     labelPadding: 10,
                     leaderLineStyle: const ArcLabelLeaderLineStyle(
-                      color: ColorManager.black,
-                      length: 15,
+                      color: ColorManager.grey,
+                      length: 30,
                       thickness: 0.5,
                     ),
                     showLeaderLines: true,
