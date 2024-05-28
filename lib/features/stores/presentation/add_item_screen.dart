@@ -144,7 +144,7 @@ class _AddItemState extends State<AddItem> {
                                                 });
                                               }
                                             },
-                                            text: "Edit",
+                                            text: "Add",
                                             size: size,
                                             width: size.width * 0.05,
                                             hasEdges: false,

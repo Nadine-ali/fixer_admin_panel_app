@@ -25,7 +25,6 @@ class DonutChartContainer extends StatelessWidget {
           DashboardCubit cubit = DashboardCubit.get(context);
           if (cubit.charts != null) {
             return SizedBox(
-              // color: Colors.amber,
                 width: double.infinity,
                 height: size.height * 0.35,
                 child: size.width > 700
@@ -47,6 +46,9 @@ class DonutChartContainer extends StatelessWidget {
                             ],
                           ),
                           CraftsmenChartModel(
+                              precentege: 1 -
+                                  cubit.charts!.pendingCraftsmen! /
+                                      cubit.charts!.totalCraftsmen!,
                               text: "Total craftsmen",
                               number: "123",
                               chartList: [
@@ -93,6 +95,9 @@ class DonutChartContainer extends StatelessWidget {
                             ),
                             verticalSpace(20),
                             CraftsmenChartModel(
+                                precentege: 1 -
+                                    cubit.charts!.pendingCraftsmen! /
+                                        cubit.charts!.totalCraftsmen!,
                                 text: "Total craftsmen",
                                 number: "123",
                                 chartList: [

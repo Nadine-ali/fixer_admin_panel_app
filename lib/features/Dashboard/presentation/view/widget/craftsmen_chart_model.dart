@@ -17,21 +17,21 @@ class CraftsmenChartModel extends StatelessWidget {
   final List<OrdinalData> chartList;
   final String text;
   final String number;
+  final double precentege;
   const CraftsmenChartModel({
     super.key,
     required this.text,
     required this.number,
     required this.chartList,
+    required this.precentege,
   });
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-       width: 175.w,
+      width: 175.w,
       height: 550.h,
-      // width: size.width * 0.25,
-      // height: size.height * 0.25,
       padding: EdgeInsets.symmetric(vertical: 25.h),
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -43,8 +43,6 @@ class CraftsmenChartModel extends StatelessWidget {
           SizedBox(
             width: size.width * 0.25,
             height: size.height * 0.06,
-            // color: Colors.amber,
-
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 20),
               child: Column(
@@ -88,7 +86,9 @@ class CraftsmenChartModel extends StatelessWidget {
                         style: TextStyles.lightheadings.copyWith(fontSize: 10),
                       ),
                       Text(
-                        "75%",
+                        precentege.round() == 0
+                            ? "0%"
+                            : "${(precentege.round() * 100).toString()}%",
                         style: TextStyles.normal
                             .copyWith(color: ColorManager.primary),
                       )
