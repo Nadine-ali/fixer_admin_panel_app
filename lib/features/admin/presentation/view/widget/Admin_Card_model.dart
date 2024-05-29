@@ -30,11 +30,7 @@ class AdminCardModel extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.person,
-              color: ColorManager.grey,
-              size: 60,
-            ),
+            Image.asset("assets/images/Default_Profile_pic.png",width:150.w,height: 150.h,),
             verticalSpace(30),
             Column(
               children: [

@@ -20,9 +20,9 @@ class ServiceButton extends StatelessWidget {
       text: text, 
       size: size,
       height:70.h,
-      width: 60.w,
+      width: 55.w,
       hasEdges: hasEdges,
-      radius: 2.44,
+      radius: 3,
       )
     
     ;

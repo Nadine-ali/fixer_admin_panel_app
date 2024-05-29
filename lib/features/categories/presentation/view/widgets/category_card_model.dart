@@ -2,10 +2,12 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/categories/presentation/view/widgets/category_buttons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CategoryCardModel extends StatelessWidget {
@@ -28,21 +30,16 @@ class CategoryCardModel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            height: 90,
-            width: 90,
-            decoration: const BoxDecoration(
-              // color: ColorManager.grey,
-              shape: BoxShape.circle,
-            ),
-            child:Image.asset(serviceimage,fit: BoxFit.contain,height: 90,width: 90,)
-            ),
-          verticalSpace(30),
+          SizedBox(
+            width: 280.w,
+            height: 280.h,
+            child: Image.asset(serviceimage,fit: BoxFit.contain,)),
+          verticalSpace(15),
           Text(
             text,
-            style: TextStyles.normal,
+            style: TextStyles.headings,
           ),
-          verticalSpace(60),
+          verticalSpace(40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

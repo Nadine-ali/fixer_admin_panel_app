@@ -64,17 +64,10 @@ class TopBar extends StatelessWidget {
             margin: const EdgeInsets.only(right: 20),
             child: Row(
               children: [
-                Container(
-                    width: 50,
-                    height: 50,
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: BoxDecoration(
-                        color: ColorManager.grey,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: SvgPicture.asset(
-                      "assets/docs/Avatar.svg",
-                      fit: BoxFit.cover,
-                    )),
+                Image.asset(
+                  "assets/images/Default_Profile_pic.png",
+                  width: 44,height: 44,
+                ),
                 const Icon(
                   Icons.keyboard_arrow_down_rounded,
                   size: 35,

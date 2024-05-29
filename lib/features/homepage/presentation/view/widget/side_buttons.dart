@@ -33,17 +33,19 @@ class _SideButtonState extends State<SideButton> {
       },
       onTap: () => widget.onTapped(widget.index),
       child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Align(
+          alignment: Alignment.centerLeft,
           child: Container(
-              width: size.width * 0.2,
+              margin: EdgeInsets.only(left:20.sp),
+              width: 80.w,
               height: size.height * 0.04,
               alignment: Alignment.center,
-              color: ishover ? const Color(0xFFEFF0F4) : ColorManager.white,
+              color: ishover ? ColorManager.darkwhite : ColorManager.white,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SvgPicture.asset(widget.iconName),
-                  horizontalSpace(20),
+                  horizontalSpace(10),
                   Text(
                     widget.text,
                     style: TextStyle(

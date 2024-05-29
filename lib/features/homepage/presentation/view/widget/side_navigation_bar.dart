@@ -28,8 +28,9 @@ class _SidenavBarState extends State<SideNavBar> {
       width: size.width * 0.2,
       child: Column(
         children: [
+          verticalSpace(15),
           const ProfileBox(),
-          verticalSpace(30),
+          verticalSpace(15),
           Container(
             color: const Color.fromARGB(255, 175, 173, 173),
             height: 1,
@@ -83,11 +84,11 @@ class _SidenavBarState extends State<SideNavBar> {
             onTapped: widget.onTapped,
             index: 6,
           ),
-          verticalSpace(size.height * 0.3),
+          verticalSpace(size.height * 0.4),
           if (size.width > 1300)
             SizedBox(
-                width: size.width * 0.08,
-                height: size.height * 0.05,
+                width: size.width * 0.09,
+                height: size.height * 0.07,
                 child: SvgPicture.asset(
                   "assets/docs/fixrlogo.svg",
                   fit: BoxFit.cover,

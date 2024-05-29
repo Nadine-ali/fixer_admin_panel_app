@@ -19,7 +19,7 @@ Widget defaultButton({
         border: hasEdges
             ? Border.all(
                 width: 0.7,
-                color: ColorManager.primary,
+                color: ColorManager.white,
               )
             : null,
         color: color,

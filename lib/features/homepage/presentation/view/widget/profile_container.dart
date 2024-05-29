@@ -13,25 +13,21 @@ class ProfileBox extends StatelessWidget {
       width: size.width * 0.2,
       height: size.height * 0.1,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-              width: 50,
-              height: 50,
-              margin: const EdgeInsets.only(left: 20),
-              decoration: BoxDecoration(
-                  color: ColorManager.grey,
-                  borderRadius: BorderRadius.circular(50)),
-              child: SvgPicture.asset(
-                "assets/docs/Avatar.svg",
-                fit: BoxFit.cover,
-              )),
-          horizontalSpace(15),
+          horizontalSpace(20),
+          Image.asset(
+            "assets/images/Default_Profile_pic.png",
+            width:60,height:60,
+          ),
+          horizontalSpace(10),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "Admin",
-                style: TextStyles.normal,
+                style: TextStyles.headings,
               ),
               Text(
                 "sama",
