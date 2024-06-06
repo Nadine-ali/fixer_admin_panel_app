@@ -42,7 +42,7 @@ class LocationRepoImpl extends LocationRepo {
           "locations": [location],
         },
       );
-      
+
       return const Right("");
     } catch (e) {
       if (e is DioError) {

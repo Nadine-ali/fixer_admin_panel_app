@@ -63,7 +63,10 @@ class _AdminBodyState extends State<AdminBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("All Admins",style:TextStyles.headings,),
+              Text(
+                "All Admins",
+                style: TextStyles.headings,
+              ),
               verticalSpace(50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -77,7 +80,7 @@ class _AdminBodyState extends State<AdminBody> {
                         // height: size.height * 0.7,
                         // width: double.infinity,
                         child: GridView.count(
-                          childAspectRatio: 174/195,
+                          childAspectRatio: 174 / 195,
                           // childAspectRatio: 12/4,
                           crossAxisCount: size.width > 1300 ? 1 : 1,
                           // crossAxisCount: size.width > 1300 ? 3 : 2,
@@ -101,7 +104,7 @@ class _AdminBodyState extends State<AdminBody> {
                     },
                   ),
                   horizontalSpace(10),
-                   InkWell(
+                  InkWell(
                     onTap: _toggleEditEntryForm,
                     child: Container(
                       width: 100.w,
@@ -115,7 +118,11 @@ class _AdminBodyState extends State<AdminBody> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.add,size: 40,color: ColorManager.primary,),
+                            const Icon(
+                              Icons.add,
+                              size: 40,
+                              color: ColorManager.primary,
+                            ),
                             Text(
                               "Add Admin",
                               style: TextStyles.normal

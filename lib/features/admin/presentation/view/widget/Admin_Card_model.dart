@@ -30,7 +30,11 @@ class AdminCardModel extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset("assets/images/Default_Profile_pic.png",width:150.w,height: 150.h,),
+            Image.asset(
+              "assets/images/Default_Profile_pic.png",
+              width: 150.w,
+              height: 150.h,
+            ),
             verticalSpace(30),
             Column(
               children: [
@@ -41,8 +45,8 @@ class AdminCardModel extends StatelessWidget {
                 ),
                 verticalSpace(10),
                 Text(admin.role!,
-                    style: TextStyles.normal
-                        .copyWith(fontWeight: FontWeight.w500))
+                    style:
+                        TextStyles.normal.copyWith(fontWeight: FontWeight.w500))
               ],
             ),
             verticalSpace(35),

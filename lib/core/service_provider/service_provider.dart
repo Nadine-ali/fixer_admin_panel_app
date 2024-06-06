@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_services/api_services.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/data/repos/dashboard_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/admin/data/repos/admin_repo_impl.dart';
+import 'package:fixer_admin_panel_app/features/categories/data/repos/categories_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/data/repos/craftsmen_repo_imp.dart';
 import 'package:fixer_admin_panel_app/features/locations/data/repos/location_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/login/data/repos/login_repo_impl.dart';
@@ -44,6 +45,11 @@ void setupLocator() {
   getIt.registerLazySingleton<LocationRepoImpl>(
     () => LocationRepoImpl(
       services: getIt<ApiServices>(),
+    ),
+  );
+  getIt.registerLazySingleton<CategoriesRepoImpl>(
+    () => CategoriesRepoImpl(
+      apiServices: getIt<ApiServices>(),
     ),
   );
 }

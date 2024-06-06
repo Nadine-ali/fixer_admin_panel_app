@@ -66,7 +66,8 @@ class TopBar extends StatelessWidget {
               children: [
                 Image.asset(
                   "assets/images/Default_Profile_pic.png",
-                  width: 44,height: 44,
+                  width: 44,
+                  height: 44,
                 ),
                 const Icon(
                   Icons.keyboard_arrow_down_rounded,

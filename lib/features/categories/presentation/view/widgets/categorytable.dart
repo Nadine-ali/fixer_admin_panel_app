@@ -39,7 +39,7 @@ class _CategoryTableState extends State<CategoryTable> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-       width: 600.w,
+      width: 600.w,
       child: SingleChildScrollView(
         child: DataTable(
           headingRowColor: MaterialStateProperty.all(ColorManager.primary),
@@ -72,7 +72,8 @@ class _CategoryTableState extends State<CategoryTable> {
                   if (index.isEven) {
                     return ColorManager.white;
                   }
-                  return ColorManager.darkwhite; // Use white color for odd rows.
+                  return ColorManager
+                      .darkwhite; // Use white color for odd rows.
                 },
               ),
               cells: <DataCell>[

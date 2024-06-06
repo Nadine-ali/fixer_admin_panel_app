@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
           DashboardView.routeName: (context) => const DashboardView(),
           AdminView.routeName: (context) => const AdminView(),
           CategoryView.routeName: (context) => const CategoryView(),
-
         },
       ),
     );

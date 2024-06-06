@@ -5,26 +5,39 @@ class TextFormFieldModel extends StatelessWidget {
   final String text;
   final double horiPadding;
   final double vertpadding;
-  const TextFormFieldModel({super.key, required this.controller, required this.text, required this.horiPadding, required this.vertpadding});
+  const TextFormFieldModel(
+      {super.key,
+      required this.controller,
+      required this.text,
+      required this.horiPadding,
+      required this.vertpadding});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-          controller:controller ,
-          decoration: InputDecoration(
-            hintText: text,
-            contentPadding:EdgeInsets.symmetric(horizontal:horiPadding,vertical: vertpadding),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: Colors.grey),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: Colors.grey),
-            ),
-          ),
-          style: const TextStyle(height: 1.5), // Adjusts the height of the text inside the TextField
-          maxLines: 1,
-        );
+    return TextFormField(
+      controller: controller,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },  
+      decoration: InputDecoration(
+        hintText: text,
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: horiPadding, vertical: vertpadding),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Colors.grey),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Colors.grey),
+        ),
+      ),
+      style: const TextStyle(
+          height: 1.5), // Adjusts the height of the text inside the TextField
+      maxLines: 1,
+    );
   }
 }

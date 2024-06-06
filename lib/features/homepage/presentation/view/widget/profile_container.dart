@@ -18,7 +18,8 @@ class ProfileBox extends StatelessWidget {
           horizontalSpace(20),
           Image.asset(
             "assets/images/Default_Profile_pic.png",
-            width:60,height:60,
+            width: 60,
+            height: 60,
           ),
           horizontalSpace(10),
           Column(

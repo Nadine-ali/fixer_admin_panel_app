@@ -32,7 +32,8 @@ class _DropDownMenuState extends State<GenderDropDownMenu> {
           ),
           child: DropdownButtonFormField<String>(
             decoration: const InputDecoration(
-              contentPadding: EdgeInsets.symmetric(horizontal: 10,vertical:12),
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 10, vertical: 12),
               border: InputBorder.none,
               hintText: 'choose Role',
             ),

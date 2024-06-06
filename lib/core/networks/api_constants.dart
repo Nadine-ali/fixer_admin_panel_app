@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const String baseUrl = "http://192.168.1.8:5000/";
+  static const String baseUrl = "http://192.168.1.6:5000/";
   static const String login = "login";
   static const String viewMessages = "ViewMessages";
   static const String charts = "Admin/Dashboard";
@@ -10,4 +10,5 @@ class ApiConstants {
   static const String addItem = "Admin/Item";
   static const String operatingLocations = "OperatingLocations";
   static const String setNewLocation = "Admin/SetNewLocations";
+  static const String addService = "Admin/Service";
 }

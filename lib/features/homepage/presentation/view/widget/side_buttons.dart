@@ -36,7 +36,7 @@ class _SideButtonState extends State<SideButton> {
         child: Align(
           alignment: Alignment.centerLeft,
           child: Container(
-              margin: EdgeInsets.only(left:20.sp),
+              margin: EdgeInsets.only(left: 20.sp),
               width: 80.w,
               height: size.height * 0.04,
               alignment: Alignment.center,

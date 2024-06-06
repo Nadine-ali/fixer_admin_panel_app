@@ -30,4 +30,3 @@ final class CraftsMenAcceptFailed extends CraftsMenState {
 
   CraftsMenAcceptFailed(this.message);
 }
-

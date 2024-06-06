@@ -55,8 +55,8 @@ class _TableModelState extends State<TableModel> {
               rows: List<DataRow>.generate(
                 cubit.messages.length,
                 (int index) => DataRow(
-                  color: MaterialStateProperty.resolveWith<Color?>(
-                      (Set<MaterialState> states) {
+                  color: WidgetStateProperty.resolveWith<Color?>(
+                      (Set<WidgetState> states) {
                     // Even rows will have a grey color.
                     if (index.isEven) {
                       return ColorManager.darkwhite;

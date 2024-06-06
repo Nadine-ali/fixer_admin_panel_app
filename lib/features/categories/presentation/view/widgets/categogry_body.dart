@@ -16,7 +16,6 @@ class CategoryBody extends StatefulWidget {
 class _CategoryBodyState extends State<CategoryBody> {
   bool _showServiceAddForm = false;
   bool _showServiceTable = false;
-  
 
   void _toggleServiceAddForm() {
     setState(() {
@@ -27,21 +26,22 @@ class _CategoryBodyState extends State<CategoryBody> {
     });
   }
 
-   void _toggleServiceTable() {
+  void _toggleServiceTable() {
     setState(() {
       _showServiceTable = !_showServiceTable;
       if (_showServiceTable) {
         _showServiceAddForm = false;
       }
-     });
-    }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-     if (_showServiceAddForm) {
+    if (_showServiceAddForm) {
       return AddServiceForm(
-        oncancel:_toggleServiceAddForm ,
-        size:size ,
+        oncancel: _toggleServiceAddForm,
+        size: size,
       );
     } else if (_showServiceTable) {
       return ServiceTable(
@@ -49,30 +49,36 @@ class _CategoryBodyState extends State<CategoryBody> {
         toggleServiceAddForm: _toggleServiceAddForm,
       );
     } else {
-    return SizedBox(
-      width: 600.w,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("All Categories",style: TextStyles.headings.copyWith(fontSize:14.sp)),
-          verticalSpace(70),
-          Row(
-            children: [
-              CategoryCardModel(text: "Electrical",serviceimage:"assets/images/electricalPic.png",
-              toggleServiceTable:_toggleServiceTable ,toggleAddForm:_toggleServiceAddForm ,
-              size: size,
-              ),
-              horizontalSpace(15),
-              CategoryCardModel(text: "Plumbing",serviceimage: "assets/images/plumbingPic.png",
-              toggleServiceTable:_toggleServiceTable ,toggleAddForm:_toggleServiceAddForm ,
-              size: size,
-              ),
-            
-            ],
-          )
-        ],
-      ),
-    );
-   }
+      return SizedBox(
+        width: 600.w,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("All Categories",
+                style: TextStyles.headings.copyWith(fontSize: 14.sp)),
+            verticalSpace(70),
+            Row(
+              children: [
+                CategoryCardModel(
+                  text: "Electrical",
+                  serviceimage: "assets/images/electricalPic.png",
+                  toggleServiceTable: _toggleServiceTable,
+                  toggleAddForm: _toggleServiceAddForm,
+                  size: size,
+                ),
+                horizontalSpace(15),
+                CategoryCardModel(
+                  text: "Plumbing",
+                  serviceimage: "assets/images/plumbingPic.png",
+                  toggleServiceTable: _toggleServiceTable,
+                  toggleAddForm: _toggleServiceAddForm,
+                  size: size,
+                ),
+              ],
+            )
+          ],
+        ),
+      );
+    }
   }
 }
