@@ -14,7 +14,7 @@ class CategoriesCubit extends Cubit<CategoriesState> {
 
   static CategoriesCubit get(context) => BlocProvider.of(context);
 
-   List<ServiceModel> services = [];
+  List<ServiceModel> services = [];
 
   Future<void> viewCategoryServices(int category) async {
     emit(GetCategoryServicesLoading());
@@ -27,8 +27,6 @@ class CategoriesCubit extends Cubit<CategoriesState> {
       },
     );
   }
-
- 
 
   Future<void> addService(
       String name, int price, String category, context) async {

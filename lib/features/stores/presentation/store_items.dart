@@ -9,6 +9,7 @@ import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.da
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/stores/manager/cubit/stores_cubit.dart';
 import 'package:fixer_admin_panel_app/features/stores/presentation/add_item_screen.dart';
+import 'package:fixer_admin_panel_app/features/stores/presentation/coupons_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -75,6 +76,16 @@ class StoreItems extends StatelessWidget {
                                           hasEdges: true,
                                           width: 100,
                                           height: 40),
+                                      defaultButton(
+                                          onPressed: () {
+                                            navigateTo(context,
+                                                CouponsScreen(store: store));
+                                          },
+                                          text: "Coupons",
+                                          size: size,
+                                          hasEdges: false,
+                                          width: 100,
+                                          height: 40),
                                     ],
                                   ),
                                 ),
@@ -109,6 +120,16 @@ class StoreItems extends StatelessWidget {
                                           text: "Refresh",
                                           size: size,
                                           hasEdges: true,
+                                          width: 100,
+                                          height: 40),
+                                      defaultButton(
+                                          onPressed: () {
+                                            navigateTo(context,
+                                                CouponsScreen(store: store));
+                                          },
+                                          text: "Coupons",
+                                          size: size,
+                                          hasEdges: false,
                                           width: 100,
                                           height: 40),
                                     ],

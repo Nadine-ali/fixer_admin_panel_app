@@ -1,3 +1,4 @@
+import 'package:fixer_admin_panel_app/features/stores/data/models/copoun_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/item_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
@@ -66,6 +67,34 @@ class StoresCubit extends Cubit<StoresState> {
       },
       (r) {
         emit(AddItemSuccess(r));
+      },
+    );
+  }
+
+  List<CopounModel> storeCoupons = [];
+
+  void getStoreCoupons(String store) async {
+    emit(GetStoreCouponsLoading());
+    final response = await repo.getStoreCoupons(store);
+    response.fold(
+      (l) {
+        emit(GetStoreCouponsFailed(l.message));
+      },
+      (r) {
+        storeCoupons = r;
+        emit(GetStoreCouponsSuccess(r));
+      },
+    );
+  }
+
+  Future<void> addCoupon(String store) async {
+    final response = await repo.addCoupon(store);
+    response.fold(
+      (l) {
+        emit(AddCouponFailed(l.message));
+      },
+      (r) {
+        emit(AddCouponSuccess(r));
       },
     );
   }

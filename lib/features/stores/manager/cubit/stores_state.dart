@@ -59,3 +59,31 @@ final class AddItemFailed extends StoresState {
 
   AddItemFailed(this.message);
 }
+
+final class GetStoreCouponsLoading extends StoresState {}
+
+final class GetStoreCouponsSuccess extends StoresState {
+  final List<CopounModel> storeCoupons;
+
+  GetStoreCouponsSuccess(this.storeCoupons);
+}
+
+final class GetStoreCouponsFailed extends StoresState {
+  final String message;
+
+  GetStoreCouponsFailed(this.message);
+}
+
+final class AddCouponLoading extends StoresState {}
+
+final class AddCouponSuccess extends StoresState {
+  final CopounModel coupon;
+
+  AddCouponSuccess(this.coupon);
+}
+
+final class AddCouponFailed extends StoresState {
+  final String message;
+
+  AddCouponFailed(this.message);
+}

@@ -55,8 +55,7 @@ class _CategoryBodyState extends State<CategoryBody> {
             Row(
               children: [
                 CategoryCardModel(
-             id: 16,
-                
+                  id: 16,
                   text: "Electrical",
                   serviceimage: "assets/images/electricalPic.png",
                   toggleAddForm: _toggleServiceAddForm,
@@ -64,8 +63,7 @@ class _CategoryBodyState extends State<CategoryBody> {
                 ),
                 horizontalSpace(15),
                 CategoryCardModel(
-                  id:14,
-                
+                  id: 14,
                   text: "Plumbing",
                   serviceimage: "assets/images/plumbingPic.png",
                   toggleAddForm: _toggleServiceAddForm,

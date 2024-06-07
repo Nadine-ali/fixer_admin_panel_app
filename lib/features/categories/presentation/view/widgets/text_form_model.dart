@@ -21,7 +21,7 @@ class TextFormFieldModel extends StatelessWidget {
           return 'Please enter some text';
         }
         return null;
-      },  
+      },
       decoration: InputDecoration(
         hintText: text,
         contentPadding: EdgeInsets.symmetric(

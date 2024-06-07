@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_constants.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_services/api_services.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_services/errors/errors.dart';
+import 'package:fixer_admin_panel_app/features/stores/data/models/copoun_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/item_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo.dart';
@@ -90,6 +91,38 @@ class StoresRepoImpl implements StoresRepo {
       );
       return Right(response["message"]);
     } catch (e) {
+      if (e is DioError) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failure, CopounModel>> addCoupon(String store) async{
+    try{
+      final response = await apiservices.get(
+        endPoint: "Admin/Coupon/$store",
+      );
+      return Right(CopounModel.fromJson(response));
+    }catch (e) {
+      if (e is DioError) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CopounModel>>> getStoreCoupons(String store)async {
+   try{
+      final response = await apiservices.getList(
+        endPoint: "Admin/AllCoupons/$store",
+      );
+      return Right(response.map((item) => CopounModel.fromJson(item)).toList());
+    }catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
