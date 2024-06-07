@@ -30,3 +30,16 @@ final class CraftsMenAcceptFailed extends CraftsMenState {
 
   CraftsMenAcceptFailed(this.message);
 }
+
+final class CraftsMenRejectLoading extends CraftsMenState {}
+
+final class CraftsMenRejectSuccess extends CraftsMenState {
+  final String message;
+
+  CraftsMenRejectSuccess(this.message);
+}
+
+final class CraftsMenRejectFailed extends CraftsMenState {
+  final String message;
+  CraftsMenRejectFailed(this.message);
+}

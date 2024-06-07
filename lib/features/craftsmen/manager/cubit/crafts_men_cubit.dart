@@ -42,4 +42,21 @@ class CraftsMenCubit extends Cubit<CraftsMenState> {
       },
     );
   }
+
+  void rejectCraftsman(int id, String subject, String body, context) async {
+    emit(CraftsMenRejectLoading());
+    final response = await repo.rejectCraftsman(id, subject, body);
+    response.fold(
+      (l) {
+        showErrorSnackbar(context, l.message);
+        emit(CraftsMenRejectFailed(l.message));
+      },
+      (r) {
+        showErrorSnackbar(context, r);
+        Navigator.pop(context);
+        Navigator.pop(context);
+        emit(CraftsMenRejectSuccess(r));
+      },
+    );
+  }
 }

@@ -2,12 +2,14 @@
 
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_services/errors/error_snackbar.dart';
+import 'package:fixer_admin_panel_app/core/routing/app_router.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/data/models/craftsman_model.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/data/repos/craftsmen_repo_imp.dart';
 import 'package:fixer_admin_panel_app/features/craftsmen/manager/cubit/crafts_men_cubit.dart';
+import 'package:fixer_admin_panel_app/features/craftsmen/presentation/widgets/rejection_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -198,7 +200,11 @@ class _CraftsmanDetailsState extends State<CraftsmanDetails> {
                                   defaultButton(
                                       onPressed: () {
                                         if (_approvalStatus == false) {
-                                          Navigator.pop(context);
+                                          navigateTo(
+                                              context,
+                                              RejectionView(
+                                                craftsman: widget.model,
+                                              ));
                                         } else if (_approvalStatus == true) {
                                           cubit.acceptCraftsman(
                                               widget.model.id!, context);

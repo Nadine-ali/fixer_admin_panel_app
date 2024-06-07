@@ -45,4 +45,24 @@ class CraftsmenRepoImpl implements CraftsmanRepository {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, String>> rejectCraftsman(
+      int id, String subject, String body) async {
+    try {
+      final response = await apiServices.post(
+        endPoint: ApiConstants.rejectCraftsman,
+        data: {
+          "cratftsman_id": id,
+          "subject": subject,
+          "body": body,
+        },
+      );
+      return Right(response['status']);
+    } on DioError catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }
