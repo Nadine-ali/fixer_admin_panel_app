@@ -1,41 +1,19 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
+import 'package:fixer_admin_panel_app/features/categories/data/models/service_model/service_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryTable extends StatefulWidget {
+  final List<ServiceModel> services;
+  const CategoryTable({super.key, required this.services});
+
   @override
   State<CategoryTable> createState() => _CategoryTableState();
 }
 
 class _CategoryTableState extends State<CategoryTable> {
-  final List<Map<String, dynamic>> services = [
-    {
-      'name': 'Electrical Wiring',
-      'price': '\$100',
-      'description': 'Installation and repair of electrical systems.'
-    },
-    {
-      'name': 'Plumbing',
-      'price': '\$80',
-      'description': 'Fixing leaks and installing new plumbing systems.'
-    },
-    {
-      'name': 'Carpentry',
-      'price': '\$150',
-      'description': 'Building and repairing wooden structures.'
-    },
-    {
-      'name': 'Painting',
-      'price': '\$120',
-      'description': 'Professional painting services for homes and offices.'
-    },
-    {
-      'name': 'Cleaning',
-      'price': '\$60',
-      'description': 'Comprehensive cleaning services.'
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -44,6 +22,12 @@ class _CategoryTableState extends State<CategoryTable> {
         child: DataTable(
           headingRowColor: MaterialStateProperty.all(ColorManager.primary),
           columns: const <DataColumn>[
+            DataColumn(
+              label: Text(
+                'Service id',
+                style: TextStyle(color: ColorManager.white),
+              ),
+            ),
             DataColumn(
               label: Text(
                 'Service Name',
@@ -56,15 +40,9 @@ class _CategoryTableState extends State<CategoryTable> {
                 style: TextStyle(color: ColorManager.white),
               ),
             ),
-            DataColumn(
-              label: Text(
-                'Service Description',
-                style: TextStyle(color: ColorManager.white),
-              ),
-            ),
           ],
           rows: List<DataRow>.generate(
-            services.length,
+            widget.services.length,
             (int index) => DataRow(
               color: MaterialStateProperty.resolveWith<Color?>(
                 (Set<MaterialState> states) {
@@ -77,9 +55,9 @@ class _CategoryTableState extends State<CategoryTable> {
                 },
               ),
               cells: <DataCell>[
-                DataCell(Text(services[index]['name'])),
-                DataCell(Text(services[index]['price'])),
-                DataCell(Text(services[index]['description'])),
+                DataCell(Text(widget.services[index].id.toString())),
+                DataCell(Text(widget.services[index].name!)),
+                DataCell(Text(widget.services[index].price.toString())),
               ],
             ),
           ),

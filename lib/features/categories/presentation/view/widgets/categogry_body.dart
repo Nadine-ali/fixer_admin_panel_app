@@ -43,11 +43,6 @@ class _CategoryBodyState extends State<CategoryBody> {
         oncancel: _toggleServiceAddForm,
         size: size,
       );
-    } else if (_showServiceTable) {
-      return ServiceTable(
-        size: size,
-        toggleServiceAddForm: _toggleServiceAddForm,
-      );
     } else {
       return SizedBox(
         width: 600.w,
@@ -60,17 +55,19 @@ class _CategoryBodyState extends State<CategoryBody> {
             Row(
               children: [
                 CategoryCardModel(
+             id: 16,
+                
                   text: "Electrical",
                   serviceimage: "assets/images/electricalPic.png",
-                  toggleServiceTable: _toggleServiceTable,
                   toggleAddForm: _toggleServiceAddForm,
                   size: size,
                 ),
                 horizontalSpace(15),
                 CategoryCardModel(
+                  id:14,
+                
                   text: "Plumbing",
                   serviceimage: "assets/images/plumbingPic.png",
-                  toggleServiceTable: _toggleServiceTable,
                   toggleAddForm: _toggleServiceAddForm,
                   size: size,
                 ),

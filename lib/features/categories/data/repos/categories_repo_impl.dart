@@ -13,14 +13,14 @@ class CategoriesRepoImpl extends CategoriesRepo {
 
   @override
   Future<Either<Failure, ServiceModel>> addService(
-      String name, int price,String category) async {
+      String name, int price, String category) async {
     try {
       final response = await apiServices.post(
         endPoint: ApiConstants.addService,
         data: {
           "name": name,
           "price": price,
-          "category":category,
+          "category": category,
         },
         jwt: token!,
       );
@@ -36,16 +36,15 @@ class CategoriesRepoImpl extends CategoriesRepo {
 
   @override
   Future<Either<Failure, List<ServiceModel>>> viewCategoryServices(
-      int category) async{
-    try{
+      int category) async {
+    try {
       final response = await apiServices.getList(
-        endPoint: "",
-      
+        endPoint: "Admin/$category",
       );
-      final services = response.map((item) => ServiceModel.fromJson(item)).toList();
+      final services =
+          response.map((item) => ServiceModel.fromJson(item)).toList();
       return Right(services);
-
-    }catch (e) {
+    } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
