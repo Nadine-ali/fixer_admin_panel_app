@@ -1,6 +1,7 @@
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
+import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
 import 'package:fixer_admin_panel_app/features/Dashboard/presentation/view/widget/table_shimmer.dart';
 import 'package:fixer_admin_panel_app/features/categories/data/repos/categories_repo_impl.dart';
 import 'package:fixer_admin_panel_app/features/categories/manager/cubit/categories_cubit.dart';
@@ -37,8 +38,23 @@ class ServicesScreen extends StatelessWidget {
                     child: SizedBox(
                       width: 600.w,
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
+                          verticalSpace(100),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text("Long press to remove service !",
+                                  style: TextStyles.headings
+                                      .copyWith(color: Colors.grey)),
+                              defaultButton(
+                                  onPressed: () {
+                                    CategoriesCubit.get(context)
+                                        .viewCategoryServices(id);
+                                  },
+                                  text: "Refresh",
+                                  size: size),
+                            ],
+                          ),
                           verticalSpace(100),
                           CategoryTable(
                             services: CategoriesCubit.get(context).services,

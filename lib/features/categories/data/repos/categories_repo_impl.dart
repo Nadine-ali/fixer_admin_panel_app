@@ -52,4 +52,21 @@ class CategoriesRepoImpl extends CategoriesRepo {
       }
     }
   }
+  
+  @override
+  Future<Either<Failure, String>> deleteService(int id) async{
+   try{
+final response = await apiServices.delete(
+        endPoint: "Admin/Service/$id",
+        jwt: token!,
+      );
+      return Right(response["Message"]);
+   } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }

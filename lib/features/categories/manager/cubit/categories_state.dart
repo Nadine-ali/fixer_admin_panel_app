@@ -27,3 +27,15 @@ final class AddServiceFailed extends CategoriesState {
   final String message;
   AddServiceFailed(this.message);
 }
+
+final class DeleteServiceLoading extends CategoriesState {}
+
+final class DeleteServiceSuccess extends CategoriesState {
+  final String message;
+  DeleteServiceSuccess(this.message);
+}
+
+final class DeleteServiceFailed extends CategoriesState {
+  final String message;
+  DeleteServiceFailed(this.message);
+}

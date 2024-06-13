@@ -7,4 +7,5 @@ abstract class CategoriesRepo {
       String name, int price, String category);
   Future<Either<Failure, List<ServiceModel>>> viewCategoryServices(
       int category);
+  Future<Either<Failure, String>> deleteService(int id);
 }

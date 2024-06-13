@@ -46,4 +46,24 @@ class CategoriesCubit extends Cubit<CategoriesState> {
       },
     );
   }
+
+  Future<void> deleteService(int id, context) async {
+    emit(DeleteServiceLoading());
+    final response = await categoriesRepo.deleteService(id);
+    response.fold(
+      (l) {
+        showErrorSnackbar(context, l.message.toString());
+        emit(DeleteServiceFailed(l.message));
+      },
+      (r) {
+        emit(DeleteServiceSuccess(r));
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Colors.green,
+            content: Text('Deleted !'),
+          ),
+        );
+      },
+    );
+  }
 }
