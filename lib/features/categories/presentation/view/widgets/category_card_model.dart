@@ -2,7 +2,6 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/routing/app_router.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
-import 'package:fixer_admin_panel_app/features/categories/data/models/service_model/service_model.dart';
 import 'package:fixer_admin_panel_app/features/categories/presentation/view/widgets/category_buttons.dart';
 import 'package:fixer_admin_panel_app/features/categories/presentation/view/widgets/servicetable.dart';
 import 'package:flutter/cupertino.dart';

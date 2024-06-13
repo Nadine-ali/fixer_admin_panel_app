@@ -2,7 +2,6 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class TopBar extends StatelessWidget {
   TopBar({super.key});

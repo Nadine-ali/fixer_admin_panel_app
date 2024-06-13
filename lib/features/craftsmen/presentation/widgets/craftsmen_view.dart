@@ -42,8 +42,8 @@ class CraftsmenView extends StatelessWidget {
                         columnSpacing: size.width * 0.1,
                         dataRowMinHeight: size.height * 0.03,
                         headingRowColor:
-                            MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
+                            WidgetStateProperty.resolveWith<Color>(
+                                (Set<WidgetState> states) {
                           return ColorManager.primary;
                         }),
                         columns: <DataColumn>[
@@ -72,8 +72,8 @@ class CraftsmenView extends StatelessWidget {
                         rows: List<DataRow>.generate(
                           cubit.craftsmanList.length,
                           (int index) => DataRow(
-                            color: MaterialStateProperty.resolveWith<Color?>(
-                                (Set<MaterialState> states) {
+                            color: WidgetStateProperty.resolveWith<Color?>(
+                                (Set<WidgetState> states) {
                               if (index.isEven) {
                                 return ColorManager.darkwhite;
                               } else {

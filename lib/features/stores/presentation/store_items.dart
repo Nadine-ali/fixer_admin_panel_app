@@ -139,9 +139,9 @@ class StoreItems extends StatelessWidget {
                                     child: DataTable(
                                       columnSpacing: size.width * 0.3,
                                       dataRowMinHeight: size.height * 0.05,
-                                      headingRowColor: MaterialStateProperty
+                                      headingRowColor: WidgetStateProperty
                                           .resolveWith<Color>(
-                                              (Set<MaterialState> states) {
+                                              (Set<WidgetState> states) {
                                         return ColorManager.primary;
                                       }),
                                       columns: const <DataColumn>[
@@ -167,9 +167,9 @@ class StoreItems extends StatelessWidget {
                                       rows: List<DataRow>.generate(
                                         cubit.storeItems.length,
                                         (int index) => DataRow(
-                                          color: MaterialStateProperty
+                                          color: WidgetStateProperty
                                               .resolveWith<Color?>(
-                                                  (Set<MaterialState> states) {
+                                                  (Set<WidgetState> states) {
                                             if (index.isEven) {
                                               return ColorManager.darkwhite;
                                             } else {

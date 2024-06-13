@@ -32,7 +32,6 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 404) {
-      print(response);
       return ServerFailure("request not found, Please try again later !");
     } else if (statusCode == 500) {
       return ServerFailure(

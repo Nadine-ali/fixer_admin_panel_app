@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fixer_admin_panel_app/core/networks/api_services/errors/error_snackbar.dart';
 import 'package:fixer_admin_panel_app/features/categories/data/models/service_model/service_model.dart';
 import 'package:fixer_admin_panel_app/features/categories/data/repos/categories_repo.dart';

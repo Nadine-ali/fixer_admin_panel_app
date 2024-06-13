@@ -2,7 +2,6 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/categories/presentation/view/widgets/add_service_form.dart';
 import 'package:fixer_admin_panel_app/features/categories/presentation/view/widgets/category_card_model.dart';
-import 'package:fixer_admin_panel_app/features/categories/presentation/view/widgets/servicetable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,23 +14,10 @@ class CategoryBody extends StatefulWidget {
 
 class _CategoryBodyState extends State<CategoryBody> {
   bool _showServiceAddForm = false;
-  bool _showServiceTable = false;
 
   void _toggleServiceAddForm() {
     setState(() {
       _showServiceAddForm = !_showServiceAddForm;
-      if (_showServiceAddForm) {
-        _showServiceTable = false;
-      }
-    });
-  }
-
-  void _toggleServiceTable() {
-    setState(() {
-      _showServiceTable = !_showServiceTable;
-      if (_showServiceTable) {
-        _showServiceAddForm = false;
-      }
     });
   }
 
