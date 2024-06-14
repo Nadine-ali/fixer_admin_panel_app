@@ -87,3 +87,31 @@ final class AddCouponFailed extends StoresState {
 
   AddCouponFailed(this.message);
 }
+
+final class DeleteItemLoading extends StoresState {}
+
+final class DeleteItemSuccess extends StoresState {
+  final String message;
+
+  DeleteItemSuccess(this.message);
+}
+
+final class DeleteItemFailed extends StoresState {
+  final String message;
+
+  DeleteItemFailed(this.message);
+}
+
+final class DeleteStoreLoading extends StoresState {}
+
+final class DeleteStoreSuccess extends StoresState {
+  final String message;
+
+  DeleteStoreSuccess(this.message);
+}
+
+final class DeleteStoreFailed extends StoresState {
+  final String message;
+
+  DeleteStoreFailed(this.message);
+}

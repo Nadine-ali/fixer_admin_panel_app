@@ -36,8 +36,8 @@ class CategoryCardModel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                  width: 280.w,
-                  height: 280.h,
+                  width: 180.w,
+                  height: 180.h,
                   child: Image.asset(
                     serviceimage,
                     fit: BoxFit.contain,

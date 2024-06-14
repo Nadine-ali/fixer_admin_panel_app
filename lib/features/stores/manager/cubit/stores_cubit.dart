@@ -1,7 +1,9 @@
+import 'package:fixer_admin_panel_app/core/networks/api_services/errors/error_snackbar.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/copoun_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/item_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'stores_state.dart';
@@ -95,6 +97,36 @@ class StoresCubit extends Cubit<StoresState> {
       },
       (r) {
         emit(AddCouponSuccess(r));
+      },
+    );
+  }
+
+  Future<void> deleteItem(int id, context) async {
+    emit(DeleteItemLoading());
+    final response = await repo.deleteItem(id);
+    response.fold(
+      (l) {
+        emit(DeleteItemFailed(l.message));
+      },
+      (r) {
+        showErrorSnackbar(context, r);
+        emit(DeleteItemSuccess(r));
+      },
+    );
+  }
+
+  Future<void> deleteStore(int id, context) async {
+    emit(DeleteStoreLoading());
+    final response = await repo.deleteStore(id);
+    response.fold(
+      (l) {
+        emit(DeleteStoreFailed(l.message));
+      },
+      (r) {
+        showErrorSnackbar(context, r);
+        Navigator.pop(context);
+        Navigator.pop(context);
+        emit(DeleteStoreSuccess(r));
       },
     );
   }

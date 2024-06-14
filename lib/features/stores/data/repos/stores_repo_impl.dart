@@ -130,4 +130,38 @@ class StoresRepoImpl implements StoresRepo {
       }
     }
   }
+  
+  @override
+  Future<Either<Failure, String>> deleteItem(int id) async{
+    try{
+      final response = await apiservices.delete(
+        endPoint: "Admin/Item/$id",
+        jwt: token!,
+      );
+      return Right(response["Message"]);
+    }catch (e) {
+      if (e is DioError) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
+  }
+  
+  @override
+  Future<Either<Failure, String>> deleteStore(int id) async{
+   try{
+      final response = await apiservices.delete(
+        endPoint: "Admin/Store/$id",
+        jwt: token!,
+      );
+      return Right(response["message"]);
+    }catch (e) {
+      if (e is DioError) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+   }
+  }
 }

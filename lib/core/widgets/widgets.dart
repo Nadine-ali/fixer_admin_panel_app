@@ -6,7 +6,6 @@ Widget defaultButton({
   required VoidCallback onPressed,
   required String text,
   required Size size,
-  Color? color,
   bool hasEdges = false,
   double? width,
   double? height,
@@ -22,7 +21,6 @@ Widget defaultButton({
                 color: ColorManager.white,
               )
             : null,
-        color: color,
         borderRadius: BorderRadius.circular(radius!),
       ),
       child: MaterialButton(

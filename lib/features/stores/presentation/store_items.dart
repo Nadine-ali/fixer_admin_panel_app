@@ -32,6 +32,55 @@ class StoreItems extends StatelessWidget {
                 store.name!,
                 style: TextStyles.headings,
               ),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text(
+                              "Are you sure you want to delete ${store.name}?"),
+                          actions: [
+                            defaultButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                text: "Cancel",
+                                size: size,
+                                width: 85,
+                                hasEdges: true),
+                            BlocProvider(
+                              create: (context) =>
+                                  StoresCubit(getIt<StoresRepoImpl>()),
+                              child: BlocBuilder<StoresCubit, StoresState>(
+                                builder: (context, state) {
+                                  if (state is DeleteStoreLoading) {
+                                    return const CircularProgressIndicator();
+                                  } else {
+                                    return defaultButton(
+                                      width: 85,
+                                      onPressed: () {
+                                        StoresCubit.get(context)
+                                            .deleteStore(store.id!, context);
+                                      },
+                                      text: "Delete",
+                                      size: size,
+                                    );
+                                  }
+                                },
+                              ),
+                            )
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  icon: const Icon(Icons.delete),
+                  color: Colors.red,
+                ),
+                horizontalSpace(10),
+              ],
               centerTitle: true,
             ),
             body: state is GetStoreItemsLoading
@@ -139,9 +188,9 @@ class StoreItems extends StatelessWidget {
                                     child: DataTable(
                                       columnSpacing: size.width * 0.3,
                                       dataRowMinHeight: size.height * 0.05,
-                                      headingRowColor: WidgetStateProperty
-                                          .resolveWith<Color>(
-                                              (Set<WidgetState> states) {
+                                      headingRowColor:
+                                          WidgetStateProperty.resolveWith<
+                                              Color>((Set<WidgetState> states) {
                                         return ColorManager.primary;
                                       }),
                                       columns: const <DataColumn>[
@@ -167,6 +216,11 @@ class StoreItems extends StatelessWidget {
                                       rows: List<DataRow>.generate(
                                         cubit.storeItems.length,
                                         (int index) => DataRow(
+                                          onLongPress: () {
+                                            StoresCubit.get(context).deleteItem(
+                                                cubit.storeItems[index].id!,
+                                                context);
+                                          },
                                           color: WidgetStateProperty
                                               .resolveWith<Color?>(
                                                   (Set<WidgetState> states) {
@@ -200,8 +254,115 @@ class StoreItems extends StatelessWidget {
                               ),
                             ),
                           )
-                    : const Center(
-                        child: Text("Failed to load items"),
+                    : SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.all(50.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  defaultButton(
+                                      onPressed: () {
+                                        navigateTo(context,
+                                            AddItem(storeName: store.name!));
+                                      },
+                                      text: "Add Item",
+                                      size: size,
+                                      hasEdges: false,
+                                      width: 100,
+                                      height: 40),
+                                  defaultButton(
+                                      onPressed: () {
+                                        cubit.getStoreItems(store.id!);
+                                      },
+                                      text: "Refresh",
+                                      size: size,
+                                      hasEdges: true,
+                                      width: 100,
+                                      height: 40),
+                                  defaultButton(
+                                      onPressed: () {
+                                        navigateTo(context,
+                                            CouponsScreen(store: store));
+                                      },
+                                      text: "Coupons",
+                                      size: size,
+                                      hasEdges: false,
+                                      width: 100,
+                                      height: 40),
+                                ],
+                              ),
+                              verticalSpace(70),
+                              Center(
+                                child: DataTable(
+                                  columnSpacing: size.width * 0.3,
+                                  dataRowMinHeight: size.height * 0.05,
+                                  headingRowColor:
+                                      WidgetStateProperty.resolveWith<Color>(
+                                          (Set<WidgetState> states) {
+                                    return ColorManager.primary;
+                                  }),
+                                  columns: const <DataColumn>[
+                                    DataColumn(
+                                      label: Text('Item Name',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: ColorManager.white)),
+                                    ),
+                                    DataColumn(
+                                      label: Text('Item Price',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: ColorManager.white)),
+                                    ),
+                                    DataColumn(
+                                      label: Text('Item Quantity',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: ColorManager.white)),
+                                    ),
+                                  ],
+                                  rows: List<DataRow>.generate(
+                                    cubit.storeItems.length,
+                                    (int index) => DataRow(
+                                      onLongPress: () {
+                                        StoresCubit.get(context).deleteItem(
+                                            cubit.storeItems[index].id!,
+                                            context);
+                                      },
+                                      color: WidgetStateProperty.resolveWith<
+                                          Color?>((Set<WidgetState> states) {
+                                        if (index.isEven) {
+                                          return ColorManager.darkwhite;
+                                        } else {
+                                          return ColorManager.white;
+                                        }
+                                      }),
+                                      cells: <DataCell>[
+                                        DataCell(Text(
+                                          cubit.storeItems[index].name!,
+                                          overflow: TextOverflow.ellipsis,
+                                        )),
+                                        DataCell(Text(
+                                          cubit.storeItems[index].price
+                                              .toString(),
+                                          overflow: TextOverflow.ellipsis,
+                                        )),
+                                        DataCell(Text(
+                                          cubit.storeItems[index].quantity
+                                              .toString(),
+                                          overflow: TextOverflow.ellipsis,
+                                        )),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
           );
         },
