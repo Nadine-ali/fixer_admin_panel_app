@@ -5,6 +5,7 @@ class CraftsmanModel {
   int? id;
   String? name;
   String? phone;
+  String? profilePic;
   String? userType;
   String? username;
 
@@ -15,6 +16,7 @@ class CraftsmanModel {
     this.id,
     this.name,
     this.phone,
+    this.profilePic,
     this.userType,
     this.username,
   });
@@ -27,6 +29,7 @@ class CraftsmanModel {
       id: json['id'] as int?,
       name: json['name'] as String?,
       phone: json['phone'] as String?,
+      profilePic: json['profile_pic'] as String?,
       userType: json['user_type'] as String?,
       username: json['username'] as String?,
     );
@@ -39,6 +42,7 @@ class CraftsmanModel {
         'id': id,
         'name': name,
         'phone': phone,
+        'profile_pic': profilePic,
         'user_type': userType,
         'username': username,
       };

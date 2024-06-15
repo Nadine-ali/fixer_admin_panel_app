@@ -46,181 +46,203 @@ class _CraftsmanDetailsState extends State<CraftsmanDetails> {
               ),
               centerTitle: true,
             ),
-            body: Center(
-              child: SizedBox(
-                height: size.height * 0.9,
-                width: size.width * 0.4,
-                child: Card(
-                  elevation: 2,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: size.width * 0.06,
-                            vertical: size.height * 0.04),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  "User Name :",
-                                  style: TextStyles.normal
-                                      .copyWith(color: Colors.grey),
-                                ),
-                                const Spacer(),
-                                Text(
-                                  widget.model.username!,
-                                  style: TextStyles.normal,
-                                ),
-                              ],
-                            ),
-                            verticalSpace(size.height * 0.05),
-                            Row(
-                              children: [
-                                Text(
-                                  "Email :",
-                                  style: TextStyles.normal
-                                      .copyWith(color: Colors.grey),
-                                ),
-                                const Spacer(),
-                                Text(
-                                  widget.model.email!,
-                                  style: TextStyles.normal,
-                                ),
-                              ],
-                            ),
-                            verticalSpace(size.height * 0.05),
-                            Row(
-                              children: [
-                                Text(
-                                  "Phone Number :",
-                                  style: TextStyles.normal
-                                      .copyWith(color: Colors.grey),
-                                ),
-                                const Spacer(),
-                                Text(
-                                  widget.model.phone!,
-                                  style: TextStyles.normal,
-                                ),
-                              ],
-                            ),
-                            if (widget.model.frontImage != null)
-                              verticalSpace(size.height * 0.05),
-                            if (widget.model.frontImage != null)
+            body: SingleChildScrollView(
+              child: Center(
+                child: SizedBox(
+                  height: size.height * 1.1,
+                  width: size.width * 0.4,
+                  child: Card(
+                    elevation: 2,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: size.width * 0.06,
+                              vertical: size.height * 0.04),
+                          child: Column(
+                            children: [
                               Row(
                                 children: [
                                   Text(
-                                    "Front Id :",
+                                    "User Name :",
                                     style: TextStyles.normal
                                         .copyWith(color: Colors.grey),
                                   ),
                                   const Spacer(),
-                                  SizedBox(
-                                      height: size.height * 0.15,
-                                      width: size.width * 0.15,
-                                      child: Image.network(
-                                        widget.model.frontImage!,
-                                        fit: BoxFit.cover,
-                                      )),
+                                  Text(
+                                    widget.model.username!,
+                                    style: TextStyles.normal,
+                                  ),
                                 ],
                               ),
-                            if (widget.model.backImage != null)
                               verticalSpace(size.height * 0.05),
-                            if (widget.model.backImage != null)
                               Row(
                                 children: [
                                   Text(
-                                    "Back Id :",
+                                    "Email :",
                                     style: TextStyles.normal
                                         .copyWith(color: Colors.grey),
                                   ),
                                   const Spacer(),
-                                  SizedBox(
-                                      height: size.height * 0.15,
-                                      width: size.width * 0.15,
-                                      child: Image.network(
-                                        widget.model.backImage!,
-                                        fit: BoxFit.cover,
-                                      )),
+                                  Text(
+                                    widget.model.email!,
+                                    style: TextStyles.normal,
+                                  ),
                                 ],
                               ),
-                          ],
+                              verticalSpace(size.height * 0.05),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Phone Number :",
+                                    style: TextStyles.normal
+                                        .copyWith(color: Colors.grey),
+                                  ),
+                                  const Spacer(),
+                                  Text(
+                                    widget.model.phone!,
+                                    style: TextStyles.normal,
+                                  ),
+                                ],
+                              ),
+                              if (widget.model.frontImage != null)
+                                verticalSpace(size.height * 0.05),
+                              if (widget.model.frontImage != null)
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Front Id :",
+                                      style: TextStyles.normal
+                                          .copyWith(color: Colors.grey),
+                                    ),
+                                    const Spacer(),
+                                    SizedBox(
+                                        height: size.height * 0.15,
+                                        width: size.width * 0.15,
+                                        child: Image.network(
+                                          widget.model.frontImage!,
+                                          fit: BoxFit.cover,
+                                        )),
+                                  ],
+                                ),
+                              if (widget.model.backImage != null)
+                                verticalSpace(size.height * 0.05),
+                              if (widget.model.backImage != null)
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Back Id :",
+                                      style: TextStyles.normal
+                                          .copyWith(color: Colors.grey),
+                                    ),
+                                    const Spacer(),
+                                    SizedBox(
+                                        height: size.height * 0.15,
+                                        width: size.width * 0.15,
+                                        child: Image.network(
+                                          widget.model.backImage!,
+                                          fit: BoxFit.cover,
+                                        )),
+                                  ],
+                                ),
+                              if (widget.model.profilePic != null)
+                                verticalSpace(size.height * 0.05),
+                              if (widget.model.profilePic != null)
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Profile Picture :",
+                                      style: TextStyles.normal
+                                          .copyWith(color: Colors.grey),
+                                    ),
+                                    const Spacer(),
+                                    SizedBox(
+                                        height: size.height * 0.15,
+                                        width: size.width * 0.15,
+                                        child: Image.network(
+                                          widget.model.profilePic!,
+                                          fit: BoxFit.cover,
+                                        )),
+                                  ],
+                                ),
+                            ],
+                          ),
                         ),
-                      ),
-                      verticalSpace(size.height * 0.01),
-                      Container(
-                        width: double.infinity,
-                        height: 2,
-                        color: const Color(0xffE0E9F2),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: size.width * 0.06,
-                            vertical: size.height * 0.04),
-                        child: Column(
-                          children: [
-                            Text(
-                              "Your Decision",
-                              style: TextStyles.headings,
-                            ),
-                            verticalSpace(size.height * 0.01),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Radio<bool>(
-                                  value: true,
-                                  groupValue: _approvalStatus,
-                                  onChanged: _handleRadioValueChange,
-                                ),
-                                const Text("Approved"),
-                                horizontalSpace(size.width * 0.02),
-                                Radio<bool>(
-                                  value: false,
-                                  groupValue: _approvalStatus,
-                                  onChanged: _handleRadioValueChange,
-                                ),
-                                const Text("Rejected"),
-                              ],
-                            ),
-                            verticalSpace(size.height * 0.05),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                defaultButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    text: "Cancel",
-                                    size: size,
-                                    hasEdges: true),
-                                horizontalSpace(size.width * 0.01),
-                                if (state is CraftsMenAcceptLoading)
-                                  const CircularProgressIndicator(),
-                                if (state is! CraftsMenAcceptLoading)
+                        verticalSpace(size.height * 0.01),
+                        Container(
+                          width: double.infinity,
+                          height: 2,
+                          color: const Color(0xffE0E9F2),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: size.width * 0.06,
+                              vertical: size.height * 0.04),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Your Decision",
+                                style: TextStyles.headings,
+                              ),
+                              verticalSpace(size.height * 0.01),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Radio<bool>(
+                                    value: true,
+                                    groupValue: _approvalStatus,
+                                    onChanged: _handleRadioValueChange,
+                                  ),
+                                  const Text("Approved"),
+                                  horizontalSpace(size.width * 0.02),
+                                  Radio<bool>(
+                                    value: false,
+                                    groupValue: _approvalStatus,
+                                    onChanged: _handleRadioValueChange,
+                                  ),
+                                  const Text("Rejected"),
+                                ],
+                              ),
+                              verticalSpace(size.height * 0.05),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
                                   defaultButton(
                                       onPressed: () {
-                                        if (_approvalStatus == false) {
-                                          navigateTo(
-                                              context,
-                                              RejectionView(
-                                                craftsman: widget.model,
-                                              ));
-                                        } else if (_approvalStatus == true) {
-                                          cubit.acceptCraftsman(
-                                              widget.model.id!, context);
-                                        } else {
-                                          showErrorSnackbar(context,
-                                              "Please Select An option");
-                                        }
+                                        Navigator.pop(context);
                                       },
-                                      text: "Submit",
-                                      size: size),
-                              ],
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                                      text: "Cancel",
+                                      size: size,
+                                      hasEdges: true),
+                                  horizontalSpace(size.width * 0.01),
+                                  if (state is CraftsMenAcceptLoading)
+                                    const CircularProgressIndicator(),
+                                  if (state is! CraftsMenAcceptLoading)
+                                    defaultButton(
+                                        onPressed: () {
+                                          if (_approvalStatus == false) {
+                                            navigateTo(
+                                                context,
+                                                RejectionView(
+                                                  craftsman: widget.model,
+                                                ));
+                                          } else if (_approvalStatus == true) {
+                                            cubit.acceptCraftsman(
+                                                widget.model.id!, context);
+                                          } else {
+                                            showErrorSnackbar(context,
+                                                "Please Select An option");
+                                          }
+                                        },
+                                        text: "Submit",
+                                        size: size),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
