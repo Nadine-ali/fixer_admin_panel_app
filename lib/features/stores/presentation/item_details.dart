@@ -80,12 +80,12 @@ class ItemDetails extends StatelessWidget {
           child: Center(
             child: Container(
               width: size.width * 0.45,
-              height: size.height * 0.8,
+              height: size.height,
               color: ColorManager.darkwhite,
               child: Center(
                 child: Container(
                   width: size.width * 0.55,
-                  height: size.height * 0.8,
+                  height: size.height,
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -105,12 +105,17 @@ class ItemDetails extends StatelessWidget {
                     children: [
                       Container(
                         width: size.width * 0.4,
-                        height: size.height * 0.65,
+                        height: size.height,
                         padding: const EdgeInsets.all(12),
                         color: ColorManager.white,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
+                            SizedBox(
+                                height: size.height * 0.2,
+                                width: size.width * 0.3,
+                                child: Image.network(item.image!)),
+                            verticalSpace(50),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
