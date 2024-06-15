@@ -57,8 +57,7 @@ class _CouponTableState extends State<CouponTable> {
                   if (index.isEven) {
                     return ColorManager.white;
                   }
-                  return ColorManager
-                      .darkwhite; 
+                  return ColorManager.darkwhite;
                 },
               ),
               cells: <DataCell>[

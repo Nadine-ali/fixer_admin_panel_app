@@ -3,6 +3,7 @@ import 'package:fixer_admin_panel_app/core/service_provider/service_provider.dar
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/core/widgets/widgets.dart';
+import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/image_upload_model.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/number_field_model.dart';
 import 'package:fixer_admin_panel_app/features/admin/presentation/view/widget/text_form_field_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
@@ -51,12 +52,12 @@ class _AddItemState extends State<AddItem> {
                   child: Center(
                     child: Container(
                       width: size.width * 0.45,
-                      height: size.height * 0.65,
+                      height: size.height * 0.8,
                       color: ColorManager.darkwhite,
                       child: Center(
                         child: Container(
                           width: size.width * 0.55,
-                          height: size.height * 0.65,
+                          height: size.height * 0.8,
                           decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(

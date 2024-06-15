@@ -1,12 +1,12 @@
 // ignore_for_file: deprecated_member_use
-
+import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_constants.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_services/api_services.dart';
 import 'package:fixer_admin_panel_app/core/networks/api_services/errors/errors.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/copoun_model.dart';
-import 'package:fixer_admin_panel_app/features/stores/data/models/item_model.dart';
+import 'package:fixer_admin_panel_app/features/stores/data/models/item_model/item_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo.dart';
 import 'package:fixer_admin_panel_app/main.dart';
@@ -100,13 +100,13 @@ class StoresRepoImpl implements StoresRepo {
   }
 
   @override
-  Future<Either<Failure, CopounModel>> addCoupon(String store) async{
-    try{
+  Future<Either<Failure, CopounModel>> addCoupon(String store) async {
+    try {
       final response = await apiservices.get(
         endPoint: "Admin/Coupon/$store",
       );
       return Right(CopounModel.fromJson(response));
-    }catch (e) {
+    } catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
@@ -116,13 +116,14 @@ class StoresRepoImpl implements StoresRepo {
   }
 
   @override
-  Future<Either<Failure, List<CopounModel>>> getStoreCoupons(String store)async {
-   try{
+  Future<Either<Failure, List<CopounModel>>> getStoreCoupons(
+      String store) async {
+    try {
       final response = await apiservices.getList(
         endPoint: "Admin/AllCoupons/$store",
       );
       return Right(response.map((item) => CopounModel.fromJson(item)).toList());
-    }catch (e) {
+    } catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
@@ -130,16 +131,16 @@ class StoresRepoImpl implements StoresRepo {
       }
     }
   }
-  
+
   @override
-  Future<Either<Failure, String>> deleteItem(int id) async{
-    try{
+  Future<Either<Failure, String>> deleteItem(int id) async {
+    try {
       final response = await apiservices.delete(
         endPoint: "Admin/Item/$id",
         jwt: token!,
       );
       return Right(response["Message"]);
-    }catch (e) {
+    } catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
@@ -147,21 +148,40 @@ class StoresRepoImpl implements StoresRepo {
       }
     }
   }
-  
+
   @override
-  Future<Either<Failure, String>> deleteStore(int id) async{
-   try{
+  Future<Either<Failure, String>> deleteStore(int id) async {
+    try {
       final response = await apiservices.delete(
         endPoint: "Admin/Store/$id",
         jwt: token!,
       );
       return Right(response["message"]);
-    }catch (e) {
+    } catch (e) {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
         return Left(ServerFailure(e.toString()));
       }
-   }
+    }
+  }
+
+  @override
+  Future<Either<Failure, String>> uploadImage(File image, int id) async {
+    try {
+      final response = await apiservices.put(
+          endPoint: "Admin/Items/$id/image",
+          jwt: token,
+          data: FormData.fromMap({
+            "image": await MultipartFile.fromFile(image.path),
+          }));
+      return Right(response["Url"]);
+    } catch (e) {
+      if (e is DioError) {
+        return Left(ServerFailure.fromDioError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
   }
 }

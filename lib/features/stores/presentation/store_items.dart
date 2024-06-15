@@ -10,6 +10,7 @@ import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_imp
 import 'package:fixer_admin_panel_app/features/stores/manager/cubit/stores_cubit.dart';
 import 'package:fixer_admin_panel_app/features/stores/presentation/add_item_screen.dart';
 import 'package:fixer_admin_panel_app/features/stores/presentation/coupons_screen.dart';
+import 'package:fixer_admin_panel_app/features/stores/presentation/item_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -217,9 +218,11 @@ class StoreItems extends StatelessWidget {
                                         cubit.storeItems.length,
                                         (int index) => DataRow(
                                           onLongPress: () {
-                                            StoresCubit.get(context).deleteItem(
-                                                cubit.storeItems[index].id!,
-                                                context);
+                                            navigateTo(
+                                                context,
+                                                ItemDetails(
+                                                  item: cubit.storeItems[index],
+                                                ));
                                           },
                                           color: WidgetStateProperty
                                               .resolveWith<Color?>(

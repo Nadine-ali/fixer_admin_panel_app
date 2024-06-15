@@ -41,9 +41,8 @@ class CraftsmenView extends StatelessWidget {
                         headingRowHeight: size.height * 0.05,
                         columnSpacing: size.width * 0.1,
                         dataRowMinHeight: size.height * 0.03,
-                        headingRowColor:
-                            WidgetStateProperty.resolveWith<Color>(
-                                (Set<WidgetState> states) {
+                        headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                            (Set<WidgetState> states) {
                           return ColorManager.primary;
                         }),
                         columns: <DataColumn>[

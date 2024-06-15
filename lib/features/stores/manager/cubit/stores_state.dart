@@ -115,3 +115,21 @@ final class DeleteStoreFailed extends StoresState {
 
   DeleteStoreFailed(this.message);
 }
+
+class ImagePickedFromGallerySuccessState extends StoresState {}
+
+class ImagePickedFromGalleryErrorState extends StoresState {}
+
+class UploadImageLoadingState extends StoresState {}
+
+class UploadImageSuccessState extends StoresState {
+  final String imageUrl;
+
+  UploadImageSuccessState(this.imageUrl);
+}
+
+class UploadImageErrorState extends StoresState {
+  final String message;
+
+  UploadImageErrorState(this.message);
+}

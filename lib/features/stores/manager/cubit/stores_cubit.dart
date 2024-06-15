@@ -1,10 +1,13 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+import 'dart:io';
 import 'package:fixer_admin_panel_app/core/networks/api_services/errors/error_snackbar.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/copoun_model.dart';
-import 'package:fixer_admin_panel_app/features/stores/data/models/item_model.dart';
+import 'package:fixer_admin_panel_app/features/stores/data/models/item_model/item_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/models/store_model.dart';
 import 'package:fixer_admin_panel_app/features/stores/data/repos/stores_repo_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 part 'stores_state.dart';
 
@@ -127,6 +130,47 @@ class StoresCubit extends Cubit<StoresState> {
         Navigator.pop(context);
         Navigator.pop(context);
         emit(DeleteStoreSuccess(r));
+      },
+    );
+  }
+
+  File? itemImage;
+  var itemFile;
+  var itemPicker = ImagePicker();
+
+  Future<void> getitemImagefromGallery(context) async {
+    itemFile = await itemPicker.pickImage(source: ImageSource.gallery);
+    if (itemFile != null) {
+      itemImage = File(itemFile.path);
+
+      emit(ImagePickedFromGallerySuccessState());
+    } else {
+      showErrorSnackbar(
+        context,
+        "no image selected",
+      );
+      emit(ImagePickedFromGalleryErrorState());
+    }
+  }
+
+  Future<void> uploadItemImage(int id, context) async {
+    emit(UploadImageLoadingState());
+    final response = await repo.uploadImage(itemImage!, id);
+    response.fold(
+      (l) {
+        showErrorSnackbar(context, l.message.toString());
+        emit(UploadImageErrorState(l.message));
+      },
+      (r) {
+        emit(UploadImageSuccessState(r));
+        Navigator.pop(context);
+        print(r);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Colors.green,
+            content: Text('Image Uploaded !'),
+          ),
+        );
       },
     );
   }
