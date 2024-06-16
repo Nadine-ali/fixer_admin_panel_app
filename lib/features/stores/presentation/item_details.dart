@@ -114,7 +114,20 @@ class ItemDetails extends StatelessWidget {
                             SizedBox(
                                 height: size.height * 0.2,
                                 width: size.width * 0.3,
-                                child: Image.network(item.image!)),
+                                child: item.image == null
+                                    ? Column(
+                                        children: [
+                                          const Icon(
+                                            Icons.error,
+                                            size: 50,
+                                          ),
+                                          Text(
+                                            "No Image Yet !",
+                                            style: TextStyles.headings,
+                                          ),
+                                        ],
+                                      )
+                                    : Image.network(item.image!)),
                             verticalSpace(50),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
