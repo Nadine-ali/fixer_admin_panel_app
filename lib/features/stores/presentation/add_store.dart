@@ -25,6 +25,7 @@ class _AddStoreState extends State<AddStore> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController locationController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
@@ -37,12 +38,12 @@ class _AddStoreState extends State<AddStore> {
           child: SingleChildScrollView(
             child: Container(
               width: size.width * 0.45,
-              height: size.height * 0.65,
+              height: size.height * 0.75,
               color: ColorManager.darkwhite,
               child: Center(
                 child: Container(
                   width: size.width * 0.55,
-                  height: size.height * 0.65,
+                  height: size.height * 0.75,
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -87,6 +88,12 @@ class _AddStoreState extends State<AddStore> {
                             verticalSpace(50),
                             TextFieldModel(
                               width: size.width * 0.3,
+                              text: "Store Phone number",
+                              controller: phoneController,
+                            ),
+                            verticalSpace(50),
+                            TextFieldModel(
+                              width: size.width * 0.3,
                               text: "Store Description",
                               controller: descriptionController,
                             ),
@@ -114,6 +121,7 @@ class _AddStoreState extends State<AddStore> {
                                           nameController.text,
                                           locationController.text,
                                           descriptionController.text,
+                                          phoneController.text,
                                         )
                                             .then((value) {
                                           widget.onContinue();

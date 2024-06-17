@@ -9,7 +9,7 @@ abstract class StoresRepo {
   Future<Either<Failure, List<StoreModel>>> getStores();
   Future<Either<Failure, List<ItemModel>>> getStoreItems(int id);
   Future<Either<Failure, String>> addStore(
-      String name, String location, String description);
+      String name, String location, String description,String number);
   Future<Either<Failure, String>> deleteStore(int id);
   Future<Either<Failure, String>> addItem(
       String name, String price, int quantity, String store);

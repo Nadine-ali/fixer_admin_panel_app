@@ -4,6 +4,7 @@ class StoreModel {
   int? itemsCount;
   String? location;
   String? name;
+  String? phone;
 
   StoreModel({
     this.description,
@@ -11,6 +12,7 @@ class StoreModel {
     this.itemsCount,
     this.location,
     this.name,
+    this.phone,
   });
 
   factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
@@ -19,6 +21,7 @@ class StoreModel {
         itemsCount: json['items_count'] as int?,
         location: json['location'] as String?,
         name: json['name'] as String?,
+        phone: json['phone'] as String?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -27,5 +30,6 @@ class StoreModel {
         'items_count': itemsCount,
         'location': location,
         'name': name,
+        'phone': phone,
       };
 }

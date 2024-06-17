@@ -58,40 +58,6 @@ class ButtonLogin extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-              verticalSpace(10),
-              Text("or", style: TextStyles.darkheadings),
-              verticalSpace(10),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  side: const BorderSide(
-                    color: ColorManager.primary,
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.sp)),
-                  // shape: const StadiumBorder(),
-                  fixedSize: Size(200.w, 100.h),
-                  backgroundColor: ColorManager.white,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 10.w,
-                      height: 10.w,
-                      child: Image.asset(
-                        "assets/images/google_icon.png",
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                    horizontalSpace(10),
-                    Text("Sign in with Google",
-                        style: TextStyle(
-                          fontSize: 8.sp,
-                        )),
-                  ],
-                ),
-              )
             ],
           );
         },

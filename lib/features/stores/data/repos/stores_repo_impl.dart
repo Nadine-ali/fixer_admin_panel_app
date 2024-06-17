@@ -78,7 +78,7 @@ class StoresRepoImpl implements StoresRepo {
 
   @override
   Future<Either<Failure, String>> addStore(
-      String name, String location, String description) async {
+      String name, String location, String description,String number) async {
     try {
       final response = await apiservices.post(
         endPoint: ApiConstants.addStore,
@@ -87,6 +87,7 @@ class StoresRepoImpl implements StoresRepo {
           "name": name,
           "location": location,
           "description": description,
+          "phone": number
         },
       );
       return Right(response["message"]);

@@ -49,9 +49,9 @@ class StoresCubit extends Cubit<StoresState> {
   }
 
   Future<void> addStore(
-      String name, String location, String description) async {
+      String name, String location, String description,String number) async {
     emit(AddStoreLoading());
-    final response = await repo.addStore(name, location, description);
+    final response = await repo.addStore(name, location, description,number);
     response.fold(
       (l) {
         emit(AddStoreFailed(l.message));

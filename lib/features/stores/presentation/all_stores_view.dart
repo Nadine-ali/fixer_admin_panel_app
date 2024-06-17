@@ -59,7 +59,7 @@ class _AllStoresState extends State<AllStores> {
                     ),
                     verticalSpace(50),
                     DataTable(
-                      columnSpacing: size.width * 0.2,
+                      columnSpacing: size.width * 0.13,
                       dataRowMinHeight: size.height * 0.05,
                       headingRowColor: MaterialStateProperty.resolveWith<Color>(
                           (Set<MaterialState> states) {
@@ -73,6 +73,11 @@ class _AllStoresState extends State<AllStores> {
                         ),
                         DataColumn(
                           label: Text('Location',
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(color: ColorManager.white)),
+                        ),
+                        DataColumn(
+                          label: Text('phone Number',
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(color: ColorManager.white)),
                         ),
@@ -108,6 +113,10 @@ class _AllStoresState extends State<AllStores> {
                             )),
                             DataCell(Text(
                               cubit.stores[index].location!,
+                              overflow: TextOverflow.ellipsis,
+                            )),
+                            DataCell(Text(
+                              cubit.stores[index].phone ?? "No Phone",
                               overflow: TextOverflow.ellipsis,
                             )),
                             DataCell(Text(

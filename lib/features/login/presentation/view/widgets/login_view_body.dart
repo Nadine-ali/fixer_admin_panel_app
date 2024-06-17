@@ -2,7 +2,6 @@ import 'package:fixer_admin_panel_app/core/helpers/spacing.dart';
 import 'package:fixer_admin_panel_app/core/themes/colors.dart';
 import 'package:fixer_admin_panel_app/core/themes/text_styles.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_buttons.dart';
-import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_forgotpass_row.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_text_container.dart';
 import 'package:fixer_admin_panel_app/features/login/presentation/view/widgets/login_view_body_text_forms.dart';
 import 'package:flutter/material.dart';
@@ -67,9 +66,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               ),
             ),
           ]),
-      verticalSpace(5),
-      const ForgotPassword(),
-      verticalSpace(5),
+      verticalSpace(80),
       ButtonLogin(
         emailController: phoneController,
         passwordController: passwordController,
