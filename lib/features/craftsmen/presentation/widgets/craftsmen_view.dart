@@ -39,7 +39,7 @@ class CraftsmenView extends StatelessWidget {
                       verticalSpace(70),
                       DataTable(
                         headingRowHeight: size.height * 0.05,
-                        columnSpacing: size.width * 0.1,
+                        columnSpacing: size.width * 0.07,
                         dataRowMinHeight: size.height * 0.03,
                         headingRowColor: WidgetStateProperty.resolveWith<Color>(
                             (Set<WidgetState> states) {
